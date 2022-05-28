@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+		<div>
+			<div class="table-responsive">
+				<table class="table table-white">
+
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Tipo</th>
+							<th>Operación</th>
+							<th>Operación</th>
+						</tr>
+
+					</thead>
+					<tbody>
+						<tr th:each="a:${listaRoles}">
+							<td th:text="${a.idRol}"></td>
+							<td th:text="${a.tipoRol}"></td>
+
+							<td><a th:href="@{/roles/eliminar?id=}+${a.idRol}">Eliminar
+							</a></td>
+							
+							<td><a th:href="@{'/roles/irmodificar/'+${a.idRol}}">Actualizar
+							</a></td>
+						</tr>
+
+						
+
+					</tbody>
+
+
+
+
+
+				</table>
+
+
+
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
