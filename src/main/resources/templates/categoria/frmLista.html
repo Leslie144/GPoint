@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="ISO-8859-1">
+</head>
+<body>
+
+	<header th:replace="master/master :: header"></header>
+	<div class="container">
+		<div>
+			<div class="table-responsive">
+				<table class="table table-white">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Tipo</th>
+							<th>Descripcio´n</th>
+							<th>Operación</th>
+							<th>Operación</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="a:${listaCategorias}">
+							<td th:text="${a.idCategoria}"></td>
+							<td th:text="${a.tipoCategoria}"></td>
+							<td th:text="${a.descripcionCategoria}"></td>
+							<td><a th:href="@{/categorias/eliminar?id=}+${a.idCategoria}">Eliminar</a></td>
+							<td><a th:href="@{'/categorias/irmodificar/'+${a.idCategoria}}">Actualizar</a></td>
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
