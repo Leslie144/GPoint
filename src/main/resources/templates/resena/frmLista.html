@@ -5,10 +5,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+
 	<header th:replace="master/master :: header"></header>
 
 	<div class="container">
+
+
+		<hr style="background-color: #fdfdfd;" />
+		<div>Lista de Reseñas</div>
+		<hr style="background-color: #fa251b;" />
+		<hr style="background-color: #fdfdfd;" />
+		
 		<div>
 			<div class="table-responsive">
 				<table class="table table-white">
@@ -29,12 +36,12 @@
 
 							<td><a th:href="@{/resenas/eliminar?id=}+${a.idResena}">Eliminar
 							</a></td>
-							
+
 							<td><a th:href="@{'/resenas/irmodificar/'+${a.idResena}}">Actualizar
 							</a></td>
 						</tr>
 
-						
+
 
 					</tbody>
 
