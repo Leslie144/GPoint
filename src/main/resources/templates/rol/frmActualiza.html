@@ -9,7 +9,13 @@
 <header th:replace="master/master :: header"></header>
 
 	<div class="container">
-
+		
+		<hr style="background-color: #fdfdfd;" />
+		<div>Modificar Rol</div>
+		<hr style="background-color: #fa251b;" />
+		<hr style="background-color: #fdfdfd;" />
+		
+		
 		<div>
 
 			<form th:action="@{/roles/modificar}" th:object="${rols}" method="post">
