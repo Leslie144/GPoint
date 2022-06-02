@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="master/master :: head">
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 </head>
 <body>
 
 	<header th:replace="master/master :: header"></header>
 	<div class="container">
+
+		<hr style="background-color: #fdfdfd;" />
+		<div>Lista de CategorÃ­as</div>
+		<hr style="background-color: #fa251b;" />
+		<hr style="background-color: #fdfdfd;" />
+
 		<div>
 			<div class="table-responsive">
 				<table class="table table-white">
@@ -14,9 +20,9 @@
 						<tr>
 							<th>Id</th>
 							<th>Tipo</th>
-							<th>Descripcio´n</th>
-							<th>Operación</th>
-							<th>Operación</th>
+							<th>DescripciÃ³n</th>
+							<th>OperaciÃ³n</th>
+							<th>OperaciÃ³n</th>
 
 						</tr>
 					</thead>
@@ -25,8 +31,10 @@
 							<td th:text="${a.idCategoria}"></td>
 							<td th:text="${a.tipoCategoria}"></td>
 							<td th:text="${a.descripcionCategoria}"></td>
-							<td><a th:href="@{/categorias/eliminar?id=}+${a.idCategoria}">Eliminar</a></td>
-							<td><a th:href="@{'/categorias/irmodificar/'+${a.idCategoria}}">Actualizar</a></td>
+							<td><a
+								th:href="@{/categorias/eliminar?id=}+${a.idCategoria}">Eliminar</a></td>
+							<td><a
+								th:href="@{'/categorias/irmodificar/'+${a.idCategoria}}">Actualizar</a></td>
 
 						</tr>
 					</tbody>

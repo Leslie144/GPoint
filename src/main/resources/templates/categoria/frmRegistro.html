@@ -7,8 +7,15 @@
 <body>
 	<header th:replace="master/master :: header"></header>
 	<div class="container">
+		<hr style="background-color: #fdfdfd;" />
+		<div>Registro de Categorías</div>
+		<hr style="background-color: #fa251b;" />
+		<hr style="background-color: #fdfdfd;" />
+
+
 		<div>
-			<form th:action="@{/categorias/guardar}" th:object="${c}" method="post">
+			<form th:action="@{/categorias/guardar}" th:object="${c}"
+				method="post">
 				<div class="col-sm-12">
 					<label class="form-label">Id: </label> <input type="text"
 						th:field="*{idCategoria}" class="form-control"></input>
@@ -18,13 +25,13 @@
 					<label class="form-label">Tipo: </label> <input type="text"
 						th:field="*{tipoCategoria}" class="form-control"></input>
 				</div>
-				
+
 				<div class="col-sm-12">
 					<label class="form-label">Deccripción: </label> <input type="text"
 						th:field="*{descripcionCategoria}" class="form-control"></input>
 				</div>
 
-				
+
 				<div class="col-sm-12">
 					<input type="submit" value="Registrar" class="btn btn-dark"></input>
 				</div>
