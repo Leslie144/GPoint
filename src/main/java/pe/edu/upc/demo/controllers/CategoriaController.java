@@ -37,7 +37,7 @@ public class CategoriaController {
 		} else {
 			catService.insert(cat);
 			model.addAttribute("mensaje", "Se registró correctamente!!");
-			return "redirect:/categorias/nuevo";// @RequestMapping
+			return "redirect:/categorias/listar";// @RequestMapping
 		}
 	}
 	@GetMapping("/listar")
