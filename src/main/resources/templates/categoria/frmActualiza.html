@@ -9,36 +9,49 @@
 	<header th:replace="master/master :: header"></header>
 
 	<div class="container">
-		<hr style="background-color: #fdfdfd;" />
-		<div>Actualizar de Categorías</div>
-		<hr style="background-color: #fa251b;" />
-		<hr style="background-color: #fdfdfd;" />
-
-		<div>
-			<form th:action="@{/categorias/modificar}" th:object="${cate}"
-				method="post">
-				<div class="col-sm-12">
-					<label class="form-label">Id: </label> <input type="text"
-						th:field="*{idCategoria}" class="form-control"></input>
-				</div>
-
-				<div class="col-sm-12">
-					<label class="form-label">Tipo: </label> <input type="text"
-						required th:field="*{tipoCategoria}" class="form-control"></input>
-				</div>
-
-				<div class="col-sm-12">
-					<label class="form-label">Deccripción: </label> <input type="text"
-						required th:field="*{descripcionCategoria}" class="form-control"></input>
-				</div>
-				<div class="col-sm-12">
-					<input type="submit" value="Actualizar" class="btn btn-dark"></input>
-				</div>
+    <hr style="background-color: gold" />
+		<div
+			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Actualizar Categoria</div>
+		<hr style="background-color: black; font-weight: 20" />
+		<hr style="background-color: gold" />
 
 
-			</form>
+		<div class="row">
+			<div class="col-8">
+
+				<form th:action="@{/categorias/modificar}" th:object="${cate}"
+					method="post">
+					<div class="col-sm-12">
+						<label class="form-label" style="font-weight: 600">Id: </label> <input type="text"
+							th:field="*{idCategoria}" class="form-control"></input>
+					</div>
+					<ul></ul>
+					<div class="col-sm-12">
+						<label class="form-label"  style="font-weight: 600">Tipo: </label> <input type="text"
+							th:field="*{tipoCategoria}" class="form-control"></input>
+					</div>
+					<ul></ul>
+					<div class="col-sm-12">
+						<label class="form-label"  style="font-weight: 600">Deccripción: </label> <input type="text"
+							th:field="*{descripcionCategoria}" class="form-control"></input>
+					</div>
+					<ul></ul>
+					<hr />
+
+					<div class="col-sm-12">
+						<input type="submit" value="Actualizar" class="btn btn-dark"></input>
+					</div>
+
+				</form>
+
+			</div>
+
+
+			<div class="col" align="center">
+				<img th:src="@{/image/update1.png}" width="300" height="320"
+					align="middle">
+			</div>
 		</div>
-
 	</div>
 
 </body>
