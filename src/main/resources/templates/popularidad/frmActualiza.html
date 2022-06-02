@@ -3,36 +3,65 @@
 <head th:replace="master/master :: head">
 <meta charset="UTF-8">
 </head>
-<body>
+<body style="background-color: gold">
 
 	<header th:replace="master/master :: header"></header>
 
 	<div class="container">
 
-		<div>
+		<hr style="background-color: gold" />
+		<div
+			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Actualizar Popularidad</div>
+		<hr style="background-color: black; font-weight: 20" />
+		<hr style="background-color: gold" />
 
-			<form th:action="@{/popularidades/modificar}" th:object="${popu}"
-				method="post">
 
-				<div class="col-sm-12">
+		<div class="row">
+			<div class="col-8">
+				<form th:action="@{/popularidades/modificar}" th:object="${popu}"
+					method="post">
 
-					<label class="form-label">Id:</label> <input type="text"
-						th:field="*{idPopularidad}" class="form-control"></input>
-				</div>
+					<div class="col-sm-12" >
 
-				<div class="col-sm-12">
+						<label class="form-label" style="font-weight: 600">Id:</label> <input type="text"
+							th:field="*{idPopularidad}" class="form-control"></input>
+					</div>
+					<ul></ul>
+					<div class="col-sm-12">
 
-					<label class="form-label">Tipo de Popularidad:</label> <input type="text" 
-						th:field="*{tipoPopularidad}" class="form-control"></input>
-				</div>
-			</form>
+						<label class="form-label" style="font-weight: 600">Tipo de Popularidad:</label> <input
+							type="text" th:field="*{tipoPopularidad}" class="form-control"></input>
+					</div>
+					<ul></ul>
+					<hr />
+					<div class="col-sm-12">
+
+						<input type="submit" value="Actualizar" class="btn btn-dark"></input>
+
+					</div>
+
+				</form>
+
+			</div>
+
+
+
+
+
+
+
+			<div class="col" align="center">
+				<img th:src="@{/image/update1.png}" width="300" height="320"
+					align="middle">
+			</div>
+
+
 		</div>
 
-		<div class="col-sm-12">
 
-			<input type="submit" value="Actualizar" class="btn btn-dark"></input>
+		<div></div>
 
-		</div>
+
 
 	</div>
 

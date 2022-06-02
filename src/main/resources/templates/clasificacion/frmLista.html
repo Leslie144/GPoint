@@ -4,23 +4,25 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="background-color: gold">
 	
 	<header th:replace="master/master :: header"></header>
 
 	<div class="container">
 	
-		<hr style="background-color: #fdfdfd;" />
-		<div>Lista de Clasificaciones</div>
-		<hr style="background-color: #fa251b;" />
-		<hr style="background-color: #fdfdfd;" />
+		<hr style="background-color: gold" />
+		<div
+			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Lista de Clasificacion</div>
+		<hr style="background-color: black; font-weight: 20" />
+		<hr style="background-color: gold" />
 	
 	
 		<div>
 			<div class="table-responsive">
-				<table class="table table-white">
+				<table class="table table-white"  border=2
+					style="background-color: white">
 
-					<thead>
+					<thead align="center">
 						<tr>
 							<th>Id</th>
 							<th>Tipo</th>
@@ -32,14 +34,14 @@
 					</thead>
 					<tbody>
 						<tr th:each="a:${listaClasificaciones}">
-							<td th:text="${a.idClasificacion}"></td>
-							<td th:text="${a.tipoClasificacion}"></td>
-							<td th:text="${a.aptoPara}"></td>
+							<td th:text="${a.idClasificacion}" align="center"></td>
+							<td th:text="${a.tipoClasificacion}" align="center"></td>
+							<td th:text="${a.aptoPara}" align="center"></td>
 
-							<td><a th:href="@{/clasificaciones/eliminar?id=}+${a.idClasificacion}">Eliminar
+							<td align="center"><a th:href="@{/clasificaciones/eliminar?id=}+${a.idClasificacion}" style="color: blue">Eliminar
 							</a></td>
 							
-							<td><a th:href="@{'/clasificaciones/irmodificar/'+${a.idClasificacion}}">Actualizar
+							<td align="center"><a th:href="@{'/clasificaciones/irmodificar/'+${a.idClasificacion}}" style="color: blue">Actualizar
 							</a></td>
 						</tr>
 

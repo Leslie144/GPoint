@@ -3,18 +3,26 @@
 <head th:replace="master/master :: head">
 <meta charset="UTF-8">
 </head>
-<body>
+<body style="background-color: gold">
 
 	<header th:replace="master/master :: header"></header>
 
 	<div class="container">
+		<hr style="background-color: gold" />
+		<div
+			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Lista
+			de Popularidad</div>
+		<hr style="background-color: black; font-weight: 20" />
+		<hr style="background-color: gold" />
+
 
 		<div>
 
 			<div class="table-responsive">
 
-				<table class="table table-light">
-					<thead>
+				<table class="table table-light"  border=2
+					style="background-color: white">
+					<thead align="center">
 						<tr>
 							<th>Id</th>
 							<th>Tipo de Popularidad</th>
@@ -25,11 +33,15 @@
 
 					<tbody>
 						<tr th:each="p:${listaPopularidades}">
-							<td th:text="${p.idPopularidad}"></td>
-							<td th:text="${p.tipoPopularidad}"></td>
+							<td th:text="${p.idPopularidad}" align="center"></td>
+							<td th:text="${p.tipoPopularidad}" align="center"></td>
 							<!-- OPERACIONES -->
-							<td><a th:href="@{/popularidades/eliminar?id=}+${p.idPopularidad}"><img th:src="@{/image/delete.png}" width="30" height="30"></a> </td>
-							<td> <a th:href="@{'/popularidades/irmodificar/'+${p.idPopularidad}}"><img th:src="@{/image/update.png}" width="30" height="30"></a></td>             
+							<td align="center"><a
+								th:href="@{/popularidades/eliminar?id=}+${p.idPopularidad}"><img
+									th:src="@{/image/delete.png}" width="30" height="30"></a></td>
+							<td align="center"><a
+								th:href="@{'/popularidades/irmodificar/'+${p.idPopularidad}}"><img
+									th:src="@{/image/update.png}" width="30" height="30"></a></td>
 						</tr>
 					</tbody>
 				</table>

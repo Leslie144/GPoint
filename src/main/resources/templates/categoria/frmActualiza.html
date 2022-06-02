@@ -9,9 +9,10 @@
 	<header th:replace="master/master :: header"></header>
 
 	<div class="container">
-    <hr style="background-color: gold" />
+		<hr style="background-color: gold" />
 		<div
-			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Actualizar Categoria</div>
+			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Actualizar
+			Categoria</div>
 		<hr style="background-color: black; font-weight: 20" />
 		<hr style="background-color: gold" />
 
@@ -22,18 +23,20 @@
 				<form th:action="@{/categorias/modificar}" th:object="${cate}"
 					method="post">
 					<div class="col-sm-12">
-						<label class="form-label" style="font-weight: 600">Id: </label> <input type="text"
-							th:field="*{idCategoria}" class="form-control"></input>
+						<label class="form-label" style="font-weight: 600">Id: </label> <input
+							type="text" th:field="*{idCategoria}" class="form-control"></input>
 					</div>
 					<ul></ul>
 					<div class="col-sm-12">
-						<label class="form-label"  style="font-weight: 600">Tipo: </label> <input type="text"
-							th:field="*{tipoCategoria}" class="form-control"></input>
+						<label class="form-label" style="font-weight: 600">Tipo: </label>
+						<input type="text" th:field="*{tipoCategoria}"
+							class="form-control"></input>
 					</div>
 					<ul></ul>
 					<div class="col-sm-12">
-						<label class="form-label"  style="font-weight: 600">Deccripción: </label> <input type="text"
-							th:field="*{descripcionCategoria}" class="form-control"></input>
+						<label class="form-label" style="font-weight: 600">Deccripción:
+						</label> <input type="text" th:field="*{descripcionCategoria}"
+							class="form-control"></input>
 					</div>
 					<ul></ul>
 					<hr />

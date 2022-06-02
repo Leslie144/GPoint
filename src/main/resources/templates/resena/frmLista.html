@@ -4,23 +4,26 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="background-color: gold">
 
 	<header th:replace="master/master :: header"></header>
 
 	<div class="container">
 
 
-		<hr style="background-color: #fdfdfd;" />
-		<div>Lista de Reseñas</div>
-		<hr style="background-color: #fa251b;" />
-		<hr style="background-color: #fdfdfd;" />
+		<hr style="background-color: gold" />
+		<div
+			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Lista
+			de Reseñas</div>
+		<hr style="background-color: black; font-weight: 20" />
+		<hr style="background-color: gold" />
 		
 		<div>
 			<div class="table-responsive">
-				<table class="table table-white">
+				<table class="table table-white"  border=2
+					style="background-color: white">
 
-					<thead>
+					<thead align="center">
 						<tr>
 							<th>Id</th>
 							<th>Mensaje</th>
@@ -31,13 +34,13 @@
 					</thead>
 					<tbody>
 						<tr th:each="a:${listaResenas}">
-							<td th:text="${a.idResena}"></td>
-							<td th:text="${a.mensaje}"></td>
+							<td th:text="${a.idResena}" align="center"></td>
+							<td th:text="${a.mensaje}" align="center"></td>
 
-							<td><a th:href="@{/resenas/eliminar?id=}+${a.idResena}">Eliminar
+							<td><a th:href="@{/resenas/eliminar?id=}+${a.idResena}" align="center">Eliminar
 							</a></td>
 
-							<td><a th:href="@{'/resenas/irmodificar/'+${a.idResena}}">Actualizar
+							<td><a th:href="@{'/resenas/irmodificar/'+${a.idResena}}" align="center">Actualizar
 							</a></td>
 						</tr>
 
