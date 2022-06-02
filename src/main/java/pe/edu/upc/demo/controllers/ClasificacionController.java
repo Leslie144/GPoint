@@ -75,13 +75,13 @@ public class ClasificacionController {
 		
 		Optional<Clasificacion>objCla= claService.listId(id);
 		model.addAttribute("cla", objCla.get());
-		return "clasificacion/frmActualiza";
+		return "clasificacion/frmActualiza"; // carpeta
 	}
 	
 	@PostMapping("/modificar")
 	public String updateClasificacion(Clasificacion clas) {
 		claService.update(clas);
-		return "redirect:/clasificaciones/listar";
+		return "redirect:/clasificaciones/listar"; // @RequestMapping
 	}
 	
 	
