@@ -4,12 +4,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body style="background-color: gold">
+<body>
 	<header th:replace="master/master :: header"></header>
 	<div class="container">
 		<hr style="background-color: gold" />
 		<div
-			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Registrar Categoria</div>
+			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Registrar
+			Categoria</div>
 		<hr style="background-color: black; font-weight: 20" />
 		<hr style="background-color: gold" />
 
@@ -19,18 +20,20 @@
 				<form th:action="@{/categorias/guardar}" th:object="${c}"
 					method="post">
 					<div class="col-sm-12">
-						<label class="form-label" style="font-weight: 600">Id: </label> <input type="text"
-							th:field="*{idCategoria}" class="form-control"></input>
+						<label class="form-label" style="font-weight: 600">Id: </label> <input
+							type="text" th:field="*{idCategoria}" class="form-control"></input>
 					</div>
 					<ul></ul>
 					<div class="col-sm-12">
-						<label class="form-label" style="font-weight: 600">Tipo: </label> <input type="text"
-							th:field="*{tipoCategoria}" class="form-control"></input>
+						<label class="form-label" style="font-weight: 600">Tipo: </label>
+						<input type="text" th:field="*{tipoCategoria}"
+							class="form-control"></input>
 					</div>
 					<ul></ul>
 					<div class="col-sm-12">
-						<label class="form-label" style="font-weight: 600">Deccripción: </label> <input type="text"
-							th:field="*{descripcionCategoria}" class="form-control"></input>
+						<label class="form-label" style="font-weight: 600">Deccripción:
+						</label> <input type="text" th:field="*{descripcionCategoria}"
+							class="form-control"></input>
 					</div>
 
 					<ul></ul>
@@ -50,11 +53,7 @@
 					align="middle">
 			</div>
 
-
-
 		</div>
-
-
 	</div>
 </body>
 </html>
