@@ -75,7 +75,7 @@ public class ClasificacionController {
 		
 		Optional<Clasificacion>objCla= claService.listId(id);
 		model.addAttribute("cla", objCla.get());
-		return "clasificacion/frmActualiza";
+		return "clasificacion/frmActualizar";
 	}
 	
 	@PostMapping("/modificar")
