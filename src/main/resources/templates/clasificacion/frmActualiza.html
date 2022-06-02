@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+		
+		<hr style="background-color: #fdfdfd;" />
+		<div>Modificar Clasificacion</div>
+		<hr style="background-color: #fa251b;" />
+		<hr style="background-color: #fdfdfd;" />
+		
+		
+		<div>
+
+			<form th:action="@{/idClasificacion/modificar}" th:object="${cla}" method="post">
+
+
+			<div class="col-sm-12">
+				<label class="form-label">Id:</label> <input type="text"
+					th:field="*{idClasificacion}" class="form-control"></input>
+			</div>
+			
+			<div class="col-sm-12">
+				<label class="form-label">Tipo:</label> <input type="text"
+					th:field="*{tipoClasificacion}" class="form-control"></input>
+			</div>
+			
+			<div class="col-sm-12">
+				<label class="form-label">Apto para:</label> <input type="text"
+					th:field="*{aptoPara}" class="form-control"></input>
+			</div>
+			
+			
+			<div class="col-sm-12">
+				 <input type="submit" value="Actualiza" class="btn btn-dark"></input>
+			</div>
+			
+			
+			
+			</form>
+		</div>
+
+	</div>
+
+</body>
+</html>
