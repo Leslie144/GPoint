@@ -4,43 +4,56 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="background-color: gold">
 
-<header th:replace="master/master :: header"></header>
+	<header th:replace="master/master :: header"></header>
 
 	<div class="container">
-		
-		<hr style="background-color: #fdfdfd;" />
-		<div>Modificar Rol</div>
-		<hr style="background-color: #fa251b;" />
-		<hr style="background-color: #fdfdfd;" />
-		
-		
-		<div>
 
-			<form th:action="@{/roles/modificar}" th:object="${rols}" method="post">
+		<hr style="background-color: gold" />
+		<div
+			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Actualizar Rol</div>
+		<hr style="background-color: black; font-weight: 20" />
+		<hr style="background-color: gold" />
 
 
-			<div class="col-sm-12">
-				<label class="form-label">Id:</label> <input type="text"
-					th:field="*{idRol}" class="form-control"></input>
+		<div class="row">
+			<div class="col-8">
+				<form th:action="@{/roles/modificar}" th:object="${rols}"
+					method="post">
+
+
+					<div class="col-sm-12" style="font-weight: 600">
+						<label class="form-label">Id:</label> <input type="text"
+							th:field="*{idRol}" class="form-control"></input>
+					</div>
+					<ul></ul>
+					<div class="col-sm-12" style="font-weight: 600">
+						<label class="form-label">Tipo:</label> <input type="text"
+							th:field="*{tipoRol}" class="form-control"></input>
+					</div>
+
+					<ul></ul>
+					<hr />
+
+					<div class="col-sm-12">
+						<input type="submit" value="Actualiza" class="btn btn-dark"></input>
+					</div>
+
+				</form>
 			</div>
-			
-			<div class="col-sm-12">
-				<label class="form-label">Tipo:</label> <input type="text"
-					th:field="*{tipoRol}" class="form-control"></input>
+
+
+
+
+			<div class="col" align="center">
+				<img th:src="@{/image/update1.png}" width="300" height="320"
+					align="middle">
 			</div>
-			
-			
-			
-			<div class="col-sm-12">
-				 <input type="submit" value="Actualiza" class="btn btn-dark"></input>
-			</div>
-			
-			
-			
-			</form>
+
 		</div>
+
+
 
 	</div>
 

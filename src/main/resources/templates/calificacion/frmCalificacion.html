@@ -3,37 +3,60 @@
 <head th:replace="master/master :: head">
 <meta charset="UTF-8">
 </head>
-<body>
+<body style="background-color: gold">
 
 	<header th:replace="master/master :: header"></header>
 
 	<div class="container">
 
-		<div>
 
-			<form th:action="@{/calificaciones/guardar}" th:object="${cal}" method="post">
+		<hr style="background-color: gold" />
+		<div
+			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Registrar Calificacion</div>
+		<hr style="background-color: black; font-weight: 20" />
+		<hr style="background-color: gold" />
 
-				<div class="col-sm-12">
 
-					<label class="form-label">Id:</label> <input type="text"
-						th:field="*{idCalificacion}" class="form-control"></input>
-				</div>
+		<div class="row">
+			<div class="col-8">
+				<form th:action="@{/calificaciones/guardar}" th:object="${cal}"
+					method="post">
 
-				<div class="col-sm-12">
+					<div class="col-sm-12">
 
-					<label class="form-label">Número de Estrellas:</label> <input type="text"
-						th:field="*{numEstrellas}" class="form-control"></input>
-				</div>
-				
-				<div class="col-sm-12">
-				
-					 <input type="submit" value="Registrar" class="btn btn-dark"></input>
-					 
-				</div>
-				
-			</form>
+						<label class="form-label">Id:</label> <input type="text"
+							th:field="*{idCalificacion}" class="form-control"></input>
+					</div>
+					<ul></ul>
+					<div class="col-sm-12">
+
+						<label class="form-label">Número de Estrellas:</label> <input
+							type="text" th:field="*{numEstrellas}" class="form-control"></input>
+					</div>
+					<ul></ul>
+					<hr />
+					<div class="col-sm-12">
+
+						<input type="submit" value="Registrar" class="btn btn-dark"></input>
+
+					</div>
+
+				</form>
+			</div>
+
+
+
+
+			<div class="col" align="center">
+				<img th:src="@{/image/registro.png}" width="300" height="320"
+					align="middle">
+			</div>
+
 
 		</div>
+
+
+
 
 	</div>
 

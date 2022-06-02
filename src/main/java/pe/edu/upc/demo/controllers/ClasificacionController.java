@@ -40,7 +40,7 @@ public class ClasificacionController {
 		} else {
 			claService.insert(cat);
 			model.addAttribute("mensaje", "Se registró correctamente!!");
-			return "redirect:/clasificacion/listar";
+			return "redirect:/clasificaciones/listar";
 		}
 	}
 	

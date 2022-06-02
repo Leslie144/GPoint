@@ -3,20 +3,23 @@
 <head th:replace="master/master :: head">
 <meta charset="UTF-8">
 </head>
-<body>
+<body style="background-color: gold">
 
 	<header th:replace="master/master :: header"></header>
 	<div class="container">
 
-		<hr style="background-color: #fdfdfd;" />
-		<div>Lista de Categorías</div>
-		<hr style="background-color: #fa251b;" />
-		<hr style="background-color: #fdfdfd;" />
+		<hr style="background-color: gold" />
+		<div
+			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Lista de Categorias
+			</div>
+		<hr style="background-color: black; font-weight: 20" />
+		<hr style="background-color: gold" />
 
 		<div>
-			<div class="table-responsive">
-				<table class="table table-white">
-					<thead>
+			<div class="table-responsive" >
+				<table class="table table-white"  border=1
+					style="background-color: white">
+					<thead align="center">
 						<tr>
 							<th>Id</th>
 							<th>Tipo</th>
@@ -28,13 +31,13 @@
 					</thead>
 					<tbody>
 						<tr th:each="a:${listaCategorias}">
-							<td th:text="${a.idCategoria}"></td>
-							<td th:text="${a.tipoCategoria}"></td>
-							<td th:text="${a.descripcionCategoria}"></td>
-							<td><a
-								th:href="@{/categorias/eliminar?id=}+${a.idCategoria}">Eliminar</a></td>
-							<td><a
-								th:href="@{'/categorias/irmodificar/'+${a.idCategoria}}">Actualizar</a></td>
+							<td th:text="${a.idCategoria}" align="center"></td>
+							<td th:text="${a.tipoCategoria}" align="center"></td>
+							<td th:text="${a.descripcionCategoria}" align="center"></td>
+							<td align="center"><a
+								th:href="@{/categorias/eliminar?id=}+${a.idCategoria}" style="color: blue">Eliminar</a></td>
+							<td align="center"><a
+								th:href="@{'/categorias/irmodificar/'+${a.idCategoria}}" style="color: blue">Actualizar</a></td>
 
 						</tr>
 					</tbody>

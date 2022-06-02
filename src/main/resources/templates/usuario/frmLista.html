@@ -4,23 +4,26 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="background-color: gold">
 
 	<header th:replace="master/master :: header"></header>
 
 	<div class="container">
 
-		<hr style="background-color: #fdfdfd;" />
-		<div>Lista de Usuarios</div>
-		<hr style="background-color: #fa251b;" />
-		<hr style="background-color: #fdfdfd;" />
+		<hr style="background-color: gold" />
+		<div
+			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Lista
+			de Usuarios</div>
+		<hr style="background-color: black; font-weight: 20" />
+		<hr style="background-color: gold" />
 
 
 		<div>
 			<div class="table-responsive">
-				<table class="table table-white">
+				<table class="table table-white"  border=2
+					style="background-color: white">
 
-					<thead>
+					<thead align="center">
 						<tr>
 							
 							<th>Rol</th>
@@ -37,13 +40,13 @@
 					<tbody>
 						<tr th:each="e:${listaUsuarios}">
 							
-							<td th:text="${e.rol.tipoRol}"></td>
-							<td th:text="${e.nombre}"></td>
-							<td th:text="${e.apellido}"></td>
-							<td th:text="${e.username}"></td>
-							<td th:text="${e.contrasena}"></td>
-							<td th:text="${#dates.format(e.fechaRegistro,'dd/MM/yyyy')}"></td>
-							<td th:text="${#dates.format(e.fechaNacimiento,'dd/MM/yyyy')}"></td>
+							<td th:text="${e.rol.tipoRol}" align="center"></td>
+							<td th:text="${e.nombre}" align="center"></td>
+							<td th:text="${e.apellido}" align="center"></td>
+							<td th:text="${e.username}" align="center"></td>
+							<td th:text="${e.contrasena}" align="center"></td>
+							<td th:text="${#dates.format(e.fechaRegistro,'dd/MM/yyyy')}" align="center"></td>
+							<td th:text="${#dates.format(e.fechaNacimiento,'dd/MM/yyyy')}" align="center"></td>
 							<td th:text="${e.correoUsuario}"></td>
 
 						</tr>
