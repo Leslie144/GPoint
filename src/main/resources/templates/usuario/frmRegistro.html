@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+
+
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+
+		<hr style="background-color: #fdfdfd;" />
+		<div>Registro de Usuario</div>
+		<hr style="background-color: #fa251b;" />
+		<hr style="background-color: #fdfdfd;" />
+
+
+		<div>
+
+			<form th:action="@{/usuarios/guardar}" method="post" th:object="${usuario}">
+
+				<div class="col-sm-12">
+					<label class="form-label">Id:</label> <input type="text"
+						th:field="*{idUsuario}" class="form-control"></input>
+				</div>
+
+				<div class="col-sm-12">
+					<label class="form-label">Rol:</label> <select name="selectRol"
+						class="form-control" th:field="*{rol.idRol}">
+						<option th:each="re: ${listaRoles}" th:value="${re.idRol}"
+							th:text="${re.tipoRol}"
+							th:selected="(${re.idRol} == *{rol.idRol})"></option>
+					</select>
+				</div>
+
+				<div class="col-sm-12">
+					<label class="form-label">Nombre:</label> <input type="text"
+						th:field="*{nombre}" class="form-control"></input>
+				</div>
+
+				<div class="col-sm-12">
+					<label class="form-label">Apellido:</label> <input type="text"
+						th:field="*{apellido}" class="form-control"></input>
+				</div>
+
+				<div class="col-sm-12">
+					<label class="form-label">Usuario:</label> <input type="text"
+						th:field="*{username}" class="form-control"></input>
+				</div>
+
+				<div class="col-sm-12">
+					<label class="form-label">Contraseña:</label> <input type="text"
+						th:field="*{contrasena}" class="form-control"></input>
+				</div>
+
+				<div class="col-sm-12">
+					<label class="form-label">Fecha de registro:</label> <input
+						type="date" th:field="*{fechaRegistro}" class="form-control"></input>
+				</div>
+
+				<div class="col-sm-12">
+					<label class="form-label">Fecha de nacimiento:</label> <input
+						type="date" th:field="*{fechaNacimiento}" class="form-control"></input>
+				</div>
+
+				<div class="col-sm-12">
+					<label class="form-label">Correo:</label> <input type="text"
+						th:field="*{correoUsuario}" class="form-control"></input>
+				</div>
+
+				<div class="col-sm-12">
+					<input type="submit" value="Registrar" class="btn btn-dark"></input>
+				</div>
+
+
+
+			</form>
+		</div>
+
+	</div>
+
+</body>
+</html>

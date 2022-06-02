@@ -1,5 +1,7 @@
 package pe.edu.upc.demo.entities;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -44,6 +46,23 @@ public class Rol {
 	public void setTipoRol(String tipoRol) {
 		this.tipoRol = tipoRol;
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(idRol, tipoRol);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Rol other = (Rol) obj;
+		return idRol == other.idRol && Objects.equals(tipoRol, other.tipoRol);
+	}
+
 	
 }

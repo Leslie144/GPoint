@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+
+		<hr style="background-color: #fdfdfd;" />
+		<div>Lista de Usuarios</div>
+		<hr style="background-color: #fa251b;" />
+		<hr style="background-color: #fdfdfd;" />
+
+
+		<div>
+			<div class="table-responsive">
+				<table class="table table-white">
+
+					<thead>
+						<tr>
+							
+							<th>Rol</th>
+							<th>Nombre</th>
+							<th>Apellido</th>
+							<th>Usuario</th>
+							<th>Contraseña</th>
+							<th>Fecha de Registro</th>
+							<th>Fecha de Nacimiento</th>
+							<th>Correo</th>
+						</tr>
+
+					</thead>
+					<tbody>
+						<tr th:each="e:${listaUsuarios}">
+							
+							<td th:text="${e.rol.tipoRol}"></td>
+							<td th:text="${e.nombre}"></td>
+							<td th:text="${e.apellido}"></td>
+							<td th:text="${e.username}"></td>
+							<td th:text="${e.contrasena}"></td>
+							<td th:text="${#dates.format(e.fechaRegistro,'dd/MM/yyyy')}"></td>
+							<td th:text="${#dates.format(e.fechaNacimiento,'dd/MM/yyyy')}"></td>
+							<td th:text="${e.correoUsuario}"></td>
+
+						</tr>
+
+
+
+					</tbody>
+
+
+
+
+
+				</table>
+
+
+
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>

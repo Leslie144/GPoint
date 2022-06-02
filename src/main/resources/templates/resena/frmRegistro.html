@@ -11,34 +11,34 @@
 	<header th:replace="master/master :: header"></header>
 
 	<div class="container">
-			
+
 		<hr style="background-color: #fdfdfd;" />
 		<div>Registrar Reseña</div>
 		<hr style="background-color: #fa251b;" />
 		<hr style="background-color: #fdfdfd;" />
-		
-		
+
+
 		<div>
 
 			<form th:action="@{/resenas/guardar}" th:object="${re}" method="post">
 
 
-			<div class="col-sm-12">
-				<label class="form-label">Id:</label> <input type="text"
-					th:field="*{idResena}" class="form-control"></input>
-			</div>
-			
-			<div class="col-sm-12">
-				<label class="form-label">Mensaje:</label> <input type="text"
-					th:field="*{mensaje}" class="form-control"></input>
-			</div>
-			
-			<div class="col-sm-12">
-				 <input type="submit" value="Registrar" class="btn btn-dark"></input>
-			</div>
-			
-			
-			
+				<div class="col-sm-12">
+					<label class="form-label">Id:</label> <input type="text"
+						th:field="*{idResena}" class="form-control"></input>
+				</div>
+
+				<div class="col-sm-12">
+					<label class="form-label">Mensaje:</label> <input type="text"
+						th:field="*{mensaje}" class="form-control"></input>
+				</div>
+
+				<div class="col-sm-12">
+					<input type="submit" value="Registrar" class="btn btn-dark"></input>
+				</div>
+
+
+
 			</form>
 		</div>
 
