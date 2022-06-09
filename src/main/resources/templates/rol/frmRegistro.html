@@ -22,8 +22,6 @@
 		<div class="row">
 			<div class="col-8">
 				<form th:action="@{/roles/guardar}" th:object="${r}" method="post">
-
-
 					<div class="col-sm-12">
 						<label class="form-label" style="font-weight: 600">Id:</label> <input
 							type="text" th:field="*{idRol}" class="form-control"></input>
@@ -38,9 +36,6 @@
 					<div class="col-sm-12">
 						<input type="submit" value="Registrar" class="btn btn-dark"></input>
 					</div>
-
-
-
 				</form>
 			</div>
 
@@ -48,12 +43,12 @@
 				<img th:src="@{/image/registro.png}" width="300" height="320"
 					align="middle">
 			</div>
-
-
 		</div>
-
-
 	</div>
+		<footer th:fragment="footer" class="container">
+		<hr style="background-color: black" />
+		<p align="center">G-Point en web 2022</p>
+	</footer>
 
 </body>
 </html>

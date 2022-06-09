@@ -28,7 +28,7 @@
 					<!-- definiendo que es una talba de color blanco -->
 					<thead align="center">
 						<!-- cabesera de la tabla-->
-						<th>ID Galeria</th>
+						<th>ID</th>
 						<th>Nombre de Galeria</th>
 						<th>Cantidad de Juegos</th>
 						<th>Eliminar</th>
@@ -47,12 +47,12 @@
 							<td th:text="${g.cantidadJuegos}" align="center"></td>
 
 							<td align="center"><a
-								th:href="@{/galerias/eliminar?id=}+${g.idGaleria}"
-								style="color: blue">DELETE </a></td>
+								th:href="@{/galerias/eliminar?id=}+${g.idGaleria}"><img
+									th:src="@{/image/delete.png}" width="30" height="30"></a></td>
 
 							<td align="center"><a
-								th:href="@{'/galerias/irmodificar/'+${g.idGaleria}}"
-								style="color: blue">UPDATE </a></td>
+								th:href="@{'/galerias/irmodificar/'+${g.idGaleria}}"><img
+									th:src="@{/image/update.png}" width="30" height="30"> </a></td>
 
 						</tr>
 					</tbody>
