@@ -11,7 +11,7 @@
 </head>
 <body style="background-color: gold">
 
-	<header th:replace="master/master :: header"> </header>
+	<header th:replace="master/masterLogin :: header"> </header>
 	
 	
 
@@ -29,7 +29,7 @@
 				<form th:action="@{/login}" method="post">
 
 					<div class="col-sm-6">
-						<img th:src="@{/img/upc.png}" height="35%" width="35%" />
+						<img th:src="@{/images/logo.png}" height="35%" width="35%" />
 					</div>
 					<div class="col-sm-6">
 						<p class="btn btn-lg btn-danger btn-block" >Ingrese su usuario y contraseña</p>
@@ -46,7 +46,7 @@
 					</div>
 
 					<div class="col-sm-6">
-						<input type="submit" class="btn btn-lg btn-danger btn-block" style="font-weight: 600"
+						<input type="submit" class="btn btn-dark" style="font-weight: 600"
 							value="Ingresar" />
 					</div>
 				</form>
