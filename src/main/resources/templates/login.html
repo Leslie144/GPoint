@@ -12,39 +12,40 @@
 <body style="background-color: gold">
 
 	<header th:replace="master/masterLogin :: header"> </header>
-	
-	
+
+
 
 	<div class="container" align="center">
-	
-	<hr style="background-color: gold" />
+
+
 		<div
 			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">LOGIN</div>
 		<hr style="background-color: black; font-weight: 20" />
-		<hr style="background-color: gold" />
-	
-	
-		<div >
+
+
+
+		<div>
 			<div class="card-body" align="center">
 				<form th:action="@{/login}" method="post">
 
 					<div class="col-sm-6">
-						<img th:src="@{/images/logo.png}" height="35%" width="35%" />
+						
 					</div>
-					<div class="col-sm-6">
-						<p class="btn btn-lg btn-danger btn-block" >Ingrese su usuario y contraseña</p>
+					<div class="col-sm-6" align="left">
+						<p style="font-style: italic;">Ingrese su usuario
+							y contraseña: </p>
 					</div>
 
 					<div class="col-sm-6">
 						<input type="text" name="username" id="username"
 							class="form-control" placeholder="usuario" autofocus required />
 					</div>
-
+					<br>
 					<div class="col-sm-6">
 						<input type="password" name="password" id="password"
-							class="form-control" placeholder="clave" required />
+							class="form-control" placeholder="password" required />
 					</div>
-
+					<br>
 					<div class="col-sm-6">
 						<input type="submit" class="btn btn-dark" style="font-weight: 600"
 							value="Ingresar" />
