@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head"></head>
+<meta charset="UTF-8"></meta>
+
+<body style="background-color: gold">
+
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+		<hr style="background-color: gold" />
+		<div
+			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Lista
+			de Usuarios</div>
+		<hr style="background-color: black; font-weight: 20" />
+		<hr style="background-color: gold" />
+
+
+
+				<div class="table-responsive">
+					<table class="table table-white">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Username</th>
+								<th>Estado</th>
+
+							</tr>
+						</thead>
+						<tbody id="persona-list">
+							<tr th:each="u:${listaUsuarios}">
+								<td th:text="${u.id}"></td>
+								<td th:text="${u.username}"></td>
+								<td th:text="${u.enabled}"></td>
+
+							</tr>
+						</tbody>
+					</table>
+					<div th:if="${mensaje}" class="alert alert-info">
+						<p th:text="${mensaje}"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer th:replace="master/master :: footer"></footer>
+</body>
+</html>
