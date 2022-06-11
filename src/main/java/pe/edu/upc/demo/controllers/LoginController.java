@@ -20,7 +20,7 @@ public class LoginController {
 			RedirectAttributes flash) {
 
 		if (principal != null) {
-			return "redirect:/resenas/listar";
+			return "redirect:/master/master";
 		}
 
 		if (error != null) {
