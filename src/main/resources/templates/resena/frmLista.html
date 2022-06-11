@@ -17,18 +17,18 @@
 			de Reseñas</div>
 		<hr style="background-color: black; font-weight: 20" />
 		<hr style="background-color: gold" />
-		
+
 		<div>
 			<div class="table-responsive">
-				<table class="table table-white"  border=2
+				<table class="table table-white" border=2
 					style="background-color: white">
 
 					<thead align="center">
 						<tr>
 							<th>Id</th>
 							<th>Mensaje</th>
-							<th>Operación</th>
-							<th>Operación</th>
+							<th>Eliminar</th>
+							<th>Actualizar</th>
 						</tr>
 
 					</thead>
@@ -37,29 +37,23 @@
 							<td th:text="${a.idResena}" align="center"></td>
 							<td th:text="${a.mensaje}" align="center"></td>
 
-							<td><a th:href="@{/resenas/eliminar?id=}+${a.idResena}" align="center">Eliminar
-							</a></td>
+							<td align="center"><a
+								th:href="@{/resenas/eliminar?id=}+${a.idResena}"><img
+									th:src="@{/image/delete.png}" width="30" height="30"></a></td>
 
-							<td><a th:href="@{'/resenas/irmodificar/'+${a.idResena}}" align="center">Actualizar
-							</a></td>
+							<td align="center"><a
+								th:href="@{'/resenas/irmodificar/'+${a.idResena}}"><img
+									th:src="@{/image/update.png}" width="30" height="30"> </a></td>
 						</tr>
-
-
-
 					</tbody>
-
-
-
-
-
 				</table>
-
-
-
 			</div>
-
 		</div>
 	</div>
 
+	<footer th:fragment="footer" class="container">
+		<hr style="background-color: black" />
+		<p align="center">G-Point en web 2022</p>
+	</footer>
 </body>
 </html>
