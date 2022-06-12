@@ -9,7 +9,7 @@ public class WelcomeController {
 	
 	@RequestMapping("/bienvenido")
 	public String irPaginaBienvenida() {
-		return "bienvenido";
+		return "bienvenido.html";
 	}
 	
 }
