@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+</head>
+<body style="background-color: gold">
+
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+		<hr style="background-color: gold" />
+		<div
+			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">
+			Te damos la bienvenid@, <span
+				th:text="${#authentication.getPrincipal().getUsername()}"></span>!
+		</div>
+
+
+		<hr style="background-color: black; font-weight: 20" />
+		<hr style="background-color: gold" />
+
+		<div class="row">
+
+
+			<div class="col-8">
+				<form id="myform">
+					<div class="row clearfix">
+						<div class="col-md-12 column" align="center">
+							<img th:src="@{/img/index.jpg}" width="600" height="600"
+								alt="logo" align="middle"></img>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+	<footer th:fragment="footer" class="container">
+		<hr style="background-color: black" />
+		<p align="center">G-Point en web 2022</p>
+	</footer>
+</body>
+</html>
