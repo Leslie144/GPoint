@@ -16,7 +16,7 @@ import javax.persistence.Table;
 public class DetalleResena {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private int idDetalleResena;
 	
 	@ManyToOne
 	@JoinColumn(name = "idResena", nullable = false)
@@ -42,7 +42,7 @@ public class DetalleResena {
 
 	public DetalleResena(int id, Resena resena, Users usuario, Juego juego, Date fechaPublicacion) {
 		super();
-		this.id = id;
+		this.idDetalleResena = id;
 		this.resena = resena;
 		this.usuario = usuario;
 		this.juego = juego;
@@ -76,7 +76,7 @@ public class DetalleResena {
 
 
 	public int getId() {
-		return id;
+		return idDetalleResena;
 	}
 
 	
@@ -90,7 +90,7 @@ public class DetalleResena {
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.idDetalleResena = id;
 	}
 
 	
