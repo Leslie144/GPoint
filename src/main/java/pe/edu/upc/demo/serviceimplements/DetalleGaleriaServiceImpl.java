@@ -14,7 +14,7 @@ import pe.edu.upc.demo.repositories.IDetalleResenaRepository;
 import pe.edu.upc.demo.serviceinterface.IDetalleResenaService;
 
 @Service
-public class DetalleResenaServiceImpl implements IDetalleResenaService{
+public class DetalleGaleriaServiceImpl implements IDetalleResenaService{
 	
 	@Autowired
 	private IDetalleResenaRepository drR;
