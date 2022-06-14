@@ -9,9 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import pe.edu.upc.demo.entities.DetalleResena;
 import pe.edu.upc.demo.entities.Juego;
 
 import pe.edu.upc.demo.serviceinterface.ICalificacionService;
@@ -46,19 +48,21 @@ public class JuegoController {
 	}
 	
 	@PostMapping("/guardar")
-	public String registrarJuego(@Valid Juego objJue, BindingResult binRes, Model model) throws ParseException {
+	public String registrarJuego(@Valid @ModelAttribute("j") Juego j, BindingResult binRes, Model model) throws ParseException {
 		if (binRes.hasErrors()) {
+			System.out.println(binRes.getFieldError(null));
 			return "juego/juego";
 		} else {
-			jService.insert(objJue);
+			jService.insert(j);
 			model.addAttribute("mensaje", "Se guardó correctamente");
 			return "redirect:/juegos/listar";
 		}
 	}
 	
+	
 	@GetMapping("/listar")
 	public String listarJuegos(Model model) {
-		try {
+		try {	
 			model.addAttribute("j", new Juego());
 			model.addAttribute("listaJuegos", jService.list());
 		} catch (Exception e) {

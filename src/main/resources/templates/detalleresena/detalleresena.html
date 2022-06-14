@@ -30,9 +30,9 @@
 
 				<div class="col-sm-12">
 					<label for="idUsuario" class="col-sm-2 col-form-label">Usuario:
-					</label> <select class="form-control" th:field="*{users.id}">
+					</label> <select class="form-control" th:field="*{usuario.id}">
 						<option th:each="u: ${listaUsuarios}" th:value="${u.id}"
-							th:text="${u.username}" th:selected="(${u.id} == *{users.id})"></option>
+							th:text="${u.username}" th:selected="(${u.id} == *{usuario.id})"></option>
 					</select>
 				</div>
 				
@@ -44,17 +44,9 @@
 					</select>
 				</div>
 				
-				<label for="fechaLanzamiento" class="col-sm-2 col-form-label">Fecha
-					de Publicacion</label>
 				<div class="col-sm-12">
-					<input type="date" th:field="*{fechaPublicacion}"
-						class="form-control">
-					<div th:object="${dr}" th:remove="tag">
-						<ul th:if="${#fields.hasErrors('*')}" class="alert alert-danger"
-							role="alert">
-							<li th:each="error : ${#fields.errors('*')}" th:text="${error}"></li>
-						</ul>
-					</div>
+					<label class="form-label">Fecha de Publicación:</label> <input
+						type="date" th:field="*{fechaPublicacion}" class="form-control"></input>
 				</div>
 				
 				
