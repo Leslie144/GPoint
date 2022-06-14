@@ -7,29 +7,27 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-import pe.edu.upc.demo.entities.DetalleResena;
-import pe.edu.upc.demo.repositories.IDetalleResenaRepository;
-
-import pe.edu.upc.demo.serviceinterface.IDetalleResenaService;
+import pe.edu.upc.demo.entities.DetalleGaleria;
+import pe.edu.upc.demo.repositories.IDetalleGaleriaRepository;
+import pe.edu.upc.demo.serviceinterface.IDetalleGaleriaService;
 
 @Service
-public class DetalleGaleriaServiceImpl implements IDetalleResenaService{
+public class DetalleGaleriaServiceImpl implements IDetalleGaleriaService{
 	
 	@Autowired
-	private IDetalleResenaRepository drR;
+	private IDetalleGaleriaRepository dgR;
 	
 
 	@Override
-	public void insert(DetalleResena dr) {
+	public void insert(DetalleGaleria dr) {
 		// TODO Auto-generated method stub
-		drR.save(dr);
+		dgR.save(dr);
 	}
 
 	@Override
-	public List<DetalleResena> list() {
+	public List<DetalleGaleria> list() {
 		// TODO Auto-generated method stub
-		return drR.findAll();
+		return dgR.findAll();
 	}
 
 	
