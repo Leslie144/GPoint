@@ -16,6 +16,7 @@ import pe.edu.upc.demo.entities.DetalleResena;
 
 import pe.edu.upc.demo.serviceinterface.IDetalleResenaService;
 import pe.edu.upc.demo.serviceinterface.IJuegoService;
+import pe.edu.upc.demo.serviceinterface.IResenaService;
 import pe.edu.upc.demo.serviceinterface.IUserService;
 
 
@@ -29,10 +30,13 @@ public class DetalleResenaController {
 	private IUserService uService;
 	@Autowired
 	private IJuegoService jService;
+	@Autowired
+	private IResenaService rService;
 	
 	@GetMapping("/nuevo")
 	public String newDetalleResena(Model model) {
 		model.addAttribute("dr", new DetalleResena());
+		model.addAttribute("listaResenas", rService.list());
 		model.addAttribute("listaUsuarios", uService.listar());
 		model.addAttribute("listaJuegos", jService.list());
 		return "detalleresena/detalleresena";
