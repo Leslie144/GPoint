@@ -12,36 +12,45 @@
 		<div
 			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Lista
 			de Usuarios</div>
+
+		<div class="form-group row">
+			<div class="col-sm-6">
+				<a href="/usuarios/nuevo" class="btn btn-dark"><span>Agregar</span></a>
+				<a href="/roles/listar" class="btn btn-danger"><span>Rol</span></a>
+				<a href="/tarjetas/listar" class="btn btn-danger"><span>Tarjeta</span></a>
+			</div>
+		</div>
+
 		<hr style="background-color: black; font-weight: 20" />
 		<hr style="background-color: gold" />
 
 
 
-				<div class="table-responsive">
-					<table class="table table-dark">
-						<thead>
-							<tr>
-								<th>Id</th>
-								<th>Username</th>
-								<th>Estado</th>
+		<div class="table-responsive">
+			<table class="table table-dark">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Username</th>
+						<th>Estado</th>
 
-							</tr>
-						</thead>
-						<tbody id="persona-list">
-							<tr th:each="u:${listaUsuarios}">
-								<td th:text="${u.id}"></td>
-								<td th:text="${u.username}"></td>
-								<td th:text="${u.enabled}"></td>
+					</tr>
+				</thead>
+				<tbody id="persona-list">
+					<tr th:each="u:${listaUsuarios}">
+						<td th:text="${u.id}"></td>
+						<td th:text="${u.username}"></td>
+						<td th:text="${u.enabled}"></td>
 
-							</tr>
-						</tbody>
-					</table>
-					<div th:if="${mensaje}" class="alert alert-info">
-						<p th:text="${mensaje}"></p>
-					</div>
-				</div>
+					</tr>
+				</tbody>
+			</table>
+			<div th:if="${mensaje}" class="alert alert-info">
+				<p th:text="${mensaje}"></p>
 			</div>
 		</div>
+	</div>
+	</div>
 	</div>
 
 	<footer th:replace="master/master :: footer"></footer>

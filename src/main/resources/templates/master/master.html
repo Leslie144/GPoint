@@ -45,19 +45,8 @@
 								<li><a class="dropdown-item" th:href="@{/usuarios/nuevo}">Registrar</a></li>
 								<li><a class="dropdown-item" th:href="@{/usuarios/listar}">Listar</a></li>
 							</ul></li>
-						<li class="nav-item dropdown"
-							sec:authorize="hasRole('ROLE_ADMIN')"><a
-							class="nav-link dropdown-toggle" href="#"
-							id="navbarScrollingDropdown" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false"
-							style="color: #fdfdfd"> Rol </a>
-							<ul class="dropdown-menu"
-								aria-labelledby="navbarScrollingDropdown">
-								<li><a class="dropdown-item" th:href="@{/roles/nuevo}">Registrar</a></li>
-								<li><a class="dropdown-item" th:href="@{/roles/listar}">Listar</a></li>
-							</ul></li>
-						
-			
+
+
 
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
@@ -84,7 +73,7 @@
 
 							</ul></li>
 
-					
+
 
 
 						<li class="nav-item dropdown"><a
@@ -142,7 +131,7 @@
 									th:href="@{/clasificaciones/listar}">Listar</a></li>
 
 							</ul></li>
-						
+
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
@@ -150,18 +139,17 @@
 							style="color: #fdfdfd"> Juego</a>
 							<ul class="dropdown-menu"
 								aria-labelledby="navbarDropdownMenuLink">
-								<li><a class="dropdown-item"
-									th:href="@{/juegos/nuevo}">Registrar</a></li>
-								<li><a class="dropdown-item"
-									th:href="@{/juegos/listar}">Listar</a></li>
+								<li><a class="dropdown-item" th:href="@{/juegos/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item" th:href="@{/juegos/listar}">Listar</a></li>
 
 							</ul></li>
-						
+
+
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false"
-							style="color: #fdfdfd"> Juego</a>
+							style="color: #fdfdfd"> Transacc</a>
 							<ul class="dropdown-menu"
 								aria-labelledby="navbarDropdownMenuLink">
 								<li><a class="dropdown-item"
@@ -170,12 +158,12 @@
 									th:href="@{/transacciones/listar}">Listar</a></li>
 
 							</ul></li>
-						
+
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false"
-							style="color: #fdfdfd"> Juego</a>
+							style="color: #fdfdfd"> Notifi</a>
 							<ul class="dropdown-menu"
 								aria-labelledby="navbarDropdownMenuLink">
 								<li><a class="dropdown-item"
@@ -184,8 +172,8 @@
 									th:href="@{/notificaciones/listar}">Listar</a></li>
 
 							</ul></li>
-						
-						
+
+
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
@@ -199,8 +187,8 @@
 									th:href="@{/detalleresenas/listar}">Listar</a></li>
 
 							</ul></li>
-						
-						
+
+
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarScrollingDropdown" role="button"
