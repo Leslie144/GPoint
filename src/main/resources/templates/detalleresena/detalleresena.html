@@ -21,7 +21,7 @@
 
 				<div class="col-sm-12">
 					<label for="idResena" class="col-sm-2 col-form-label">Reseña:
-					</label> <select class="form-control" th:field="*{resena.idResena}">
+					</label> <select class="form-control" th:field="*{resena.idResena}" required="required">
 						<option th:each="r: ${listaResenas}"
 							th:value="${r.idResena}" th:text="${r.mensaje}"
 							th:selected="(${r.idResena} == *{resena.idResena})"></option>
@@ -30,7 +30,7 @@
 
 				<div class="col-sm-12">
 					<label for="idUsuario" class="col-sm-2 col-form-label">Usuario:
-					</label> <select class="form-control" th:field="*{usuario.id}">
+					</label> <select class="form-control" th:field="*{usuario.id}" required="required">
 						<option th:each="u: ${listaUsuarios}" th:value="${u.id}"
 							th:text="${u.username}" th:selected="(${u.id} == *{usuario.id})"></option>
 					</select>
@@ -38,7 +38,7 @@
 				
 				<div class="col-sm-12">
 					<label for="idJuego" class="col-sm-2 col-form-label">Juego:
-					</label> <select class="form-control" th:field="*{juego.idJuego}">
+					</label> <select class="form-control" th:field="*{juego.idJuego}" required="required">
 						<option th:each="j: ${listaJuegos}" th:value="${j.idJuego}"
 							th:text="${j.nombreJuego}" th:selected="(${j.idJuego} == *{juego.idJuego})"></option>
 					</select>
@@ -46,7 +46,7 @@
 				
 				<div class="col-sm-12">
 					<label class="form-label">Fecha de Publicación:</label> <input
-						type="date" th:field="*{fechaPublicacion}" class="form-control"></input>
+						type="date" th:field="*{fechaPublicacion}"  class="form-control" required="required"></input>
 				</div>
 				
 				
