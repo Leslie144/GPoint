@@ -21,7 +21,7 @@
 
 				<div class="col-sm-12">
 					<label for="idCategoria" class="col-sm-2 col-form-label">Categoria:
-					</label> <select class="form-control" th:field="*{categoria.idCategoria}">
+					</label> <select class="form-control" required="required" th:field="*{categoria.idCategoria}">
 						<option th:each="c: ${listaCategorias}"
 							th:value="${c.idCategoria}" th:text="${c.descripcionCategoria}"
 							th:selected="(${c.idCategoria} == *{categoria.idCategoria})"></option>
@@ -30,7 +30,7 @@
 
 				<div class="col-sm-12">
 					<label for="idClasificacion" class="col-sm-2 col-form-label">Clasificacion:
-					</label> <select class="form-control"
+					</label> <select class="form-control" required="required"
 						th:field="*{clasificacion.idClasificacion}">
 						<option th:each="cla: ${listaClasificaciones}"
 							th:value="${cla.idClasificacion}"
@@ -41,7 +41,7 @@
 
 				<div class="col-sm-12">
 					<label for="idCalificacion" class="col-sm-2 col-form-label">Calificacion:
-					</label> <select class="form-control"
+					</label> <select class="form-control" required="required"
 						th:field="*{calificacion.idCalificacion}">
 						<option th:each="ca: ${listaCalificaciones}"
 							th:value="${ca.idCalificacion}" th:text="${ca.numEstrellas}"
@@ -51,7 +51,7 @@
 
 				<div class="col-sm-12">
 					<label for="idPopularidad" class="col-sm-2 col-form-label">Popularidad:
-					</label> <select class="form-control"
+					</label> <select class="form-control" required="required"
 						th:field="*{popularidad.idPopularidad}">
 						<option th:each="p: ${listaPopularidades}"
 							th:value="${p.idPopularidad}" th:text="${p.tipoPopularidad}"
@@ -61,27 +61,27 @@
 
 				<div class="col-sm-20">
 					<label class="form-label" style="font-weight: 600">Nombre:
-					</label><input type="text" th:field="*{nombreJuego}" class="form-control"></input>
+					</label><input type="text" th:field="*{nombreJuego}" class="form-control" required="required"></input>
 				</div>
 
 				<div class="col-sm-20">
 					<label class="form-label" style="font-weight: 600">Descripcion:
-					</label><input type="text" th:field="*{descripcion}" class="form-control"></input>
+					</label><input type="text" th:field="*{descripcion}" class="form-control" required="required"></input>
 				</div>
 
 				<div class="col-sm-12">
 					<label class="form-label">Fecha de Lanzimiento:</label> <input
-						type="date" th:field="*{fechaLanzamiento}" class="form-control"></input>
+						type="date" th:field="*{fechaLanzamiento}" class="form-control" required="required" ></input>
 				</div>
 
 				<div class="col-sm-12">
 					<label class="form-label">Tamaño de Juego::</label> <input
-						type="text" th:field="*{tamanoJuego}" class="form-control"></input>
+						type="number" th:field="*{tamanoJuego}" class="form-control" required="required" min="1" ></input>
 				</div>
 
 				<div class="col-sm-12">
 					<label class="form-label">Precio de Juego::</label> <input
-						type="text" th:field="*{precioJuego}" class="form-control"></input>
+						type="number" th:field="*{precioJuego}" class="form-control" required="required" min="1"></input>
 				</div>
 
 
