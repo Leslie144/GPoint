@@ -16,6 +16,10 @@ public class DetalleGaleria {
 	private int idDetalleGaleria;
 	
 	@ManyToOne
+	@JoinColumn(name = "idGaleria", nullable = false)
+	private Galeria galeria;
+
+	@ManyToOne
 	@JoinColumn(name = "idJuego", nullable = false)
 	private Juego juego;
 
@@ -28,11 +32,20 @@ public class DetalleGaleria {
 		// TODO Auto-generated constructor stub
 	}
 
-	public DetalleGaleria(int idDetalleGaleria, Juego juego, Users usuario) {
+	public DetalleGaleria(int idDetalleGaleria,Galeria galeria, Juego juego, Users usuario) {
 		super();
 		this.idDetalleGaleria = idDetalleGaleria;
+		this.galeria = galeria;
 		this.juego = juego;
 		this.usuario = usuario;
+	}
+
+	public Galeria getGaleria() {
+		return galeria;
+	}
+
+	public void setGaleria(Galeria galeria) {
+		this.galeria = galeria;
 	}
 
 	public int getIdDetalleGaleria() {
