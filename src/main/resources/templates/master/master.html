@@ -87,6 +87,19 @@
 								<li><a class="dropdown-item" th:href="@{/galerias/listar}">Listar</a></li>
 
 							</ul></li>
+							
+							
+							<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false"
+							style="color: #fdfdfd"> Detalle Galeria </a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/detallegalerias/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item" th:href="@{/detallegalerias/listar}">Listar</a></li>
+
+							</ul></li>
 
 						<li class="nav-item dropdown" sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')"><a
 							class="nav-link dropdown-toggle" href="#"
