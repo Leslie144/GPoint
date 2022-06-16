@@ -32,6 +32,7 @@
 							<th>Nombre de Tarjeta</th>
 							<th>Fecha de Expiración</th>
 							<th>Código CVV</th>
+
 						</tr>
 					</thead>
 					<tbody id="t-list">
@@ -41,7 +42,7 @@
 							<td th:text="${t.nombreTarjeta}"></td>
 							<td th:text="${#dates.format(t.fechaExpiracion,'dd/MM/yyyy')}"></td>
 							<td th:text="${t.codigoCvv}"></td>
-
+						
 						</tr>
 					</tbody>
 				</table>

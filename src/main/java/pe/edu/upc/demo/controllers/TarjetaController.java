@@ -2,6 +2,7 @@ package pe.edu.upc.demo.controllers;
 
 import javax.validation.Valid;
 import java.text.ParseException;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import pe.edu.upc.demo.entities.Tarjeta;
 import pe.edu.upc.demo.serviceinterface.ITarjetaService;
@@ -51,5 +53,18 @@ public class TarjetaController {
 			model.addAttribute("error", e.getMessage());
 		}
 		return "/tarjeta/frmLista"; // carpeta
+	}
+
+	@RequestMapping("/eliminar")
+	public String deleteTarjeta(Map<String, Object> model, @RequestParam(value = "id") Integer id) {
+		try {
+			if (id != null) {
+				tService.delete(id);
+				model.put("listaTarjetas", tService.list());
+			}
+		} catch (Exception e) {
+			model.put("error", e.getMessage());
+		}
+		return "redirect:/tarjetas/listar";// @RequestMapping
 	}
 }
