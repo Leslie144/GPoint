@@ -60,6 +60,6 @@ public class DetalleGaleriaController {
 		} catch (Exception e) {
 			model.addAttribute("error", e.getMessage());
 		}
-		return "/detallegaleria/listadetallegaleria";
+		return "/detallegaleria/listaDetalleGaleria";
 	}
 }
