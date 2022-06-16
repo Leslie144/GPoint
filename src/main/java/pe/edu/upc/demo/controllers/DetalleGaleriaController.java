@@ -86,20 +86,20 @@ public class DetalleGaleriaController {
 	}
 	
 	
-	/*
+	
 	@RequestMapping("/irmodificar/{id}")
 	public String goUpdate(@PathVariable int id, Model model) {
 		
-		Optional<Galeria>objDg= dgService.listId(id);
-		model.addAttribute("gal", objDg.get());
+		Optional<DetalleGaleria>objDg= dgService.listId(id);
+		model.addAttribute("dg", objDg.get());
 		
 		
 		return "galeria/frmActualizar";
 	}
-	*/
+	
 	
 	@RequestMapping("/modificar")
-	public String updatePerson(DetalleGaleria dg) {
+	public String updatedetallegaleria(DetalleGaleria dg) {
 		dgService.update(dg);
 		return "redirect:/detallegalerias/listar";
 	}
