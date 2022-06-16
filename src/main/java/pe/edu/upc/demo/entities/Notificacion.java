@@ -33,11 +33,11 @@ public class Notificacion {
 	@JoinColumn(name = "idJuego", nullable = false)
 	private Juego juego;
 	
-	@NotNull(message = "Este campo no puede estar vacío")
+	@NotNull(message = "Debe especificar el mensaje a mostrar")
 	@Column(name="mensaje", nullable = false, length = 44)
 	private String mensaje;
 	
-	@NotNull(message = "Por favor indique el estado de la notificacion")
+	@NotNull(message = "Debe especificar el estado de la notificacion")
 	@Column(name="notificacionActiva", nullable = false, length = 44)
 	private String notificacionActiva;
 
