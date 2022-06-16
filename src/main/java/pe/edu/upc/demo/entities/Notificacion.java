@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 
 
@@ -22,17 +23,21 @@ public class Notificacion {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idNotificacion;
 	
+	@NotNull(message = "Debes especificar el id de usuario")
 	@ManyToOne
 	@JoinColumn(name = "idUsuario", nullable = false)
 	private Users usuario;
 	
+	@NotNull(message = "Debes especificar el id del juego")
 	@ManyToOne
 	@JoinColumn(name = "idJuego", nullable = false)
 	private Juego juego;
 	
+	@NotNull(message = "Este campo no puede estar vacío")
 	@Column(name="mensaje", nullable = false, length = 44)
 	private String mensaje;
 	
+	@NotNull(message = "Por favor indique el estado de la notificacion")
 	@Column(name="notificacionActiva", nullable = false, length = 44)
 	private String notificacionActiva;
 
