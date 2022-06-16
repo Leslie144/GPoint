@@ -91,16 +91,16 @@ public class DetalleGaleriaController {
 	public String goUpdate(@PathVariable int id, Model model) {
 		
 		Optional<DetalleGaleria>objDg= dgService.listId(id);
-		model.addAttribute("dg", objDg.get());
+		model.addAttribute("dga", objDg.get());
 		
 		
-		return "galeria/frmActualizar";
+		return "detallegaleria/ActualizarDetalleGaleria";
 	}
 	
 	
 	@RequestMapping("/modificar")
-	public String updatedetallegaleria(DetalleGaleria dg) {
-		dgService.update(dg);
+	public String updatedetallegaleria(DetalleGaleria dga) {
+		dgService.update(dga);
 		return "redirect:/detallegalerias/listar";
 	}
 	
