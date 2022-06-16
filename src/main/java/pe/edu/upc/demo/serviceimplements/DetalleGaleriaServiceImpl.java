@@ -1,6 +1,7 @@
 package pe.edu.upc.demo.serviceimplements;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,26 @@ public class DetalleGaleriaServiceImpl implements IDetalleGaleriaService{
 		// TODO Auto-generated method stub
 		return dgR.findAll();
 	}
+	
+	
+	public void delete(int idDetalleGaleria) {
+		dgR.deleteById(idDetalleGaleria);
+	}
 
+	
+	
+
+	public Optional<DetalleGaleria> listId(int idDetalleGaleria) {
+		
+		return dgR.findById(idDetalleGaleria);
+	}
+
+	
+	
+	public void update(DetalleGaleria detallegaleria) {
+		dgR.save(detallegaleria);
+		
+	}
 	
 	
 }
