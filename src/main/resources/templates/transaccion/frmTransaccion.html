@@ -18,12 +18,6 @@
 
 		<div>
 			<form th:action="@{/transacciones/guardar}" th:object="${tra}" method="post">
-
-				<div class="col-sm-20">
-					<label class="form-label" style="font-weight: 600">Transaccion:
-					</label><input type="text" th:field="*{idTransaccion}" class="form-control"></input>
-				</div>	
-
 				<div class="col-sm-12">
 					<label for="idJuego" class="col-sm-2 col-form-label">Juego:
 					</label> <select class="form-control"
@@ -48,7 +42,7 @@
 				<!-- PRECIO JUEGO -->
 				<div class="col-sm-20">
 					<label class="form-label" style="font-weight: 600">Precio Juego:
-					</label><input type="text" th:field="*{precioJuego}" class="form-control"></input>
+					</label><input type="text" th:field="*{precioJuego}" class="form-control" pattern="[0-200]" title="Debe colocar un numero de 0 a 200" required></input>
 				</div>				
 				
 				<!-- FECHA TRANSACCION -->
@@ -56,7 +50,7 @@
 					de Transaccion:</label>
 				<div class="col-sm-12">
 					<input type="date" th:field="*{fechaTransaccion}"
-						class="form-control">
+						class="form-control" pattern="[0-10]" title="Utilice el formato yyyy/mm/dd" required>
 					<div th:object="${tra}" th:remove="tag">
 						<ul th:if="${#fields.hasErrors('*')}" class="alert alert-danger"
 							role="alert">
