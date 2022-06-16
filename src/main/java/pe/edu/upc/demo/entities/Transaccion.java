@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Min;
 
 
 
@@ -23,17 +25,22 @@ public class Transaccion {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idTransaccion;
 	
+	@NotNull(message = "Por favor especifique el id del juego")
 	@ManyToOne
 	@JoinColumn(name = "idJuego", nullable = false)
 	private Juego juego;
 	
+	@NotNull(message = "Por favor especifique el id del usuario")
 	@ManyToOne
 	@JoinColumn(name = "idUsuario", nullable = false)
 	private Users usuario;
 	
+	@NotNull(message = "Debe indicar un monto")
+	@Min(value = 0, message  ="El precio mínimo es 0")
 	@Column(name="precioJuego", nullable = false)
 	private int precioJuego;
 	
+	@NotNull(message = "Especifique la fecha de la transaccion")
 	@Column(name="fechaTransaccion", nullable = false)
 	private Date fechaTransaccion;
 
