@@ -22,7 +22,7 @@
 					<label for="idJuego" class="col-sm-2 col-form-label">Juego:
 					</label> <select class="form-control"
 						th:field="*{juego.idJuego}">
-						<option th:each="j: ${listaJuegos}"
+						<option th:each="j:${listaJuegos}"
 							th:value="${j.idJuego}"
 							th:text="${j.tipoClasificacion}"
 							th:selected="(${j.idJuego} == *{juego.idJuego})"></option>
@@ -33,7 +33,7 @@
 					<label for="idUsuario" class="col-sm-2 col-form-label">Usuario:
 					</label> <select class="form-control"
 						th:field="*{usuario.idUsuario}">
-						<option th:each="u: ${listaUsuarios}"
+						<option th:each="u:${listaUsuarios}"
 							th:value="${u.idUsuario}"
 							th:selected="(${u.idUsuario} == *{usuario.idUsuario})"></option>
 					</select>
