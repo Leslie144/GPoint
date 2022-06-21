@@ -21,15 +21,17 @@
 		<div>
 			<table style="width: 100%">
 				<tr th:each="a:${listaResenas}">
-					
-					<div class="card" style="width: 12rem; display: inline-block">
-					<img th:src="@{/image/resena.png}" class="card-img-top">
+
+					<div class="card border-6" style="width: 12rem; display: inline-block; border-spacing: 100px">
+						<div style="background-color: black; color: black" ></div>
+						<img th:src="@{/image/resena.png}" class="card-img-top">
 						<div class="card-body">
 							<h5 class="card-title">Review</h5>
 							<p class="card-text" th:text="${a.idResena}">Id</p>
 							<p class="card-text" th:text="${a.mensaje}">Mensaje</p>
 						</div>
 					</div>
+				
 				</tr>
 			</table>
 		</div>
