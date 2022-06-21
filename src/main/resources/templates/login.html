@@ -15,37 +15,61 @@
 	rel="stylesheet">
 
 </head>
-<body style="background-color: white">
+<body style="background-color: gold">
 
 	<div class="container" align="center">
-		<div class="card border-light text-center" style="background-color: gold">
+		<div>
+			<ul></ul>
+			<br> <br>
+			<ul></ul>
+		</div>
+		<div class="card border-gold text-center"
+			style="background-color: gold; border-color: gold" >
+
 			<div class="card-body" align="center" style="background-color: gold">
 				<form th:action="@{/login}" method="post">
 
 					<div class="col-sm-6">
-						<img th:src="@{/image/logo.png}" height="35%" width="35%" />
-					</div>
-					<div class="col-sm-6">
-						<p class="btn btn-lg btn-dark btn-block">G-POINT</p>
+						<img th:src="@{/image/logo.png}" height="40%" width="45%" />
 					</div>
 
+
+					<div class="col-sm-6">
+
+						<p class="btn btn-sm btn-dark btn-black" align="center"
+							style="font-size: 5; font-style: inherit;">Download video
+							Games</p>
+					</div>
+
+
+					<div class="col-sm-6">
+						<hr />
+					</div>
+
+
+					<div class="col-sm-6">
+						<p align="left">
+							<em>Ingresa tus datos para ingrear a tu cuenta</em>
+						</p>
+					</div>
+					<ul></ul>
 					<div class="col-sm-6">
 						<input type="text" name="username" id="username"
 							class="form-control" placeholder="usuario" autofocus required />
 					</div>
-
+					<ul></ul>
 					<div class="col-sm-6">
 						<input type="password" name="password" id="password"
 							class="form-control" placeholder="clave" required />
 					</div>
-
+					<ul></ul>
 					<div class="col-sm-6">
 						<input type="submit" class="btn btn-lg btn-dark btn-block"
 							value="Ingresar" />
 					</div>
 				</form>
 				<span class="title-content">¿Aún no tienes una cuenta?</span> <a
-					th:href="@{/usuario/createAccount}">Registrarse</a>
+					th:href="@{/usuario/createAccount}"> <em>Registrarse</em></a>
 
 
 			</div>
