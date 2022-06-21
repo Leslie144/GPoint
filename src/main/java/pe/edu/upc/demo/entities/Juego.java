@@ -53,6 +53,8 @@ public class Juego {
 
 	@Column(name = "precioJuego", nullable = false)
 	private float precioJuego;
+	
+	private String Foto;
 
 	public Juego() {
 		super();
@@ -61,7 +63,7 @@ public class Juego {
 
 	public Juego(int idJuego, Categoria categoria, Clasificacion clasificacion, Calificacion calificacion,
 			Popularidad popularidad, String nombreJuego, String descripcion, Date fechaLanzamiento, int tamanoJuego,
-			float precioJuego) {
+			float precioJuego, String foto) {
 		super();
 		this.idJuego = idJuego;
 		this.categoria = categoria;
@@ -73,6 +75,7 @@ public class Juego {
 		this.fechaLanzamiento = fechaLanzamiento;
 		this.tamanoJuego = tamanoJuego;
 		this.precioJuego = precioJuego;
+		this.Foto = foto;
 	}
 
 	public int getIdJuego() {
@@ -154,12 +157,22 @@ public class Juego {
 	public void setPrecioJuego(float precioJuego) {
 		this.precioJuego = precioJuego;
 	}
+	
+	
+	
+	public String getFoto() {
+		return Foto;
+	}
+
+	public void setFoto(String foto) {
+		this.Foto = foto;
+	}
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(idJuego);
 	}
-
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

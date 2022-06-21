@@ -1,15 +1,20 @@
 package pe.edu.upc.demo.serviceinterface;
 
 import java.util.List;
+import java.util.Optional;
 
 import pe.edu.upc.demo.entities.Juego;
 
 
 
+
 public interface IJuegoService {
-	public void insert(Juego j);
+	public Integer insert(Juego j);
 
 	public List<Juego> list();
+	
+	Optional<Juego> listarId(int idJuego);
+	
 
 		
 
