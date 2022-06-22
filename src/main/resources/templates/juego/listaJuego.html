@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head"></head>
+<meta charset="UTF-8"></meta>
+
+<body style="background-color: white">
+
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+		<hr style="background-color: gold" />
+		<div
+			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Lista
+			de Juegos</div>
+		<hr style="background-color: black; font-weight: 20" />
+		<hr style="background-color: gold" />
+			<div>
+			<table style="width: 100%">
+				<tr th:each="j:${listaJuegos}">
+					
+					<div class="card" style="width: 12rem; display: inline-block">
+					<img th:src="@{/image/img2.jpg}" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title" th:text="${j.nombreJuego}"></h5>
+							<p class="card-text" th:text="${j.categoria.tipoCategoria}"></p>
+							<p class="card-text" th:text="${j.clasificacion.tipoClasificacion}"></p>
+							<p class="card-text" th:text="${j.calificacion.numEstrellas}"></p>
+							<p class="card-text" th:text="${j.popularidad.tipoPopularidad}"></p>
+							<p class="card-text" th:text="${j.descripcion}"></p>
+							<p class="card-text" th:text="${#dates.format(j.fechaLanzamiento,'dd/MM/yyyy')}"></p>
+							<p class="card-text" th:text="${j.tamanoJuego}"></p>
+							<p class="card-text" th:text="${j.precioJuego}"></p>
+						</div>
+					</div>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+
+	<footer th:replace="master/master :: footer"></footer>
+</body>
+</html>
