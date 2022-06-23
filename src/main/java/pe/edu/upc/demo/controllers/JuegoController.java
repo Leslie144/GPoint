@@ -144,4 +144,11 @@ public class JuegoController {
 
 		return "juego/ver";
 	}
+	
+	@RequestMapping("/reporte1")
+	public String resenaJuego(Map <String, Object> model) {
+		model.put("reporteLista", jService.resenaJuego());
+		return "juego/vista";
+	}
+
 }
