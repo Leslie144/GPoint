@@ -51,6 +51,7 @@ public class Transaccion {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Future(message="La fecha tiene que ser en futuro")
 	@Column(name="fechaTransaccion", nullable = false)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaTransaccion;
 
 	
