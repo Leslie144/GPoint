@@ -18,8 +18,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
-
-
+import javax.validation.constraints.Future;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table (name="Transaccion")
@@ -48,7 +49,9 @@ public class Transaccion {
 	
 	@NotEmpty(message = "Especifique la fecha de la transaccion")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Future(message="La fecha tiene que ser en futuro")
 	@Column(name="fechaTransaccion", nullable = false)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date fechaTransaccion;
 
 	
