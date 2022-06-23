@@ -10,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -39,7 +37,6 @@ public class DetalleResena {
 	private Juego juego;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@Temporal(TemporalType.DATE)
 	@NotNull(message="Indique la fecha de publicación")
 	@Column(name = "fechaPublicacion", nullable = false)
 	private Date fechaPublicacion;
