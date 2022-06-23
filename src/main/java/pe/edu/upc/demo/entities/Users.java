@@ -45,7 +45,7 @@ public class Users {
 	
 	@Column(name="apellido", nullable=false, length=44)
 	@NotNull(message="El campo es requerido")
-	private String apellidonombre;
+	private String apellido;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "fechaRegistro", nullable = false)
