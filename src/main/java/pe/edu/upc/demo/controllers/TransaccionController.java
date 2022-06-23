@@ -68,7 +68,7 @@ public class TransaccionController {
 		} catch (Exception e) {
 			model.put("error", e.getMessage());
 		}
-		return "transaccion/frmLista";
+		return "redirect:/transacciones/listar";
 	}
 
 	
