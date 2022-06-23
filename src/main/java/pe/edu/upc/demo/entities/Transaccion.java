@@ -11,8 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -45,7 +43,6 @@ public class Transaccion {
 	@Column(name="precioJuego", nullable = false)
 	private int precioJuego;
 	
-	@Temporal(TemporalType.DATE)
 	@NotEmpty(message = "Especifique la fecha de la transaccion")
 	@Column(name="fechaTransaccion", nullable = false)
 	private Date fechaTransaccion;
