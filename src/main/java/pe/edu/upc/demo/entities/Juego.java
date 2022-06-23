@@ -11,6 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -27,20 +31,27 @@ public class Juego {
 
 	@OneToOne
 	@JoinColumn(name = "idClasificacion", nullable = false)
+	@NotNull(message="Este campo es obligatorio")
 	private Clasificacion clasificacion;
 
 	@OneToOne
 	@JoinColumn(name = "idCalificacion", nullable = false)
+	@NotNull(message="Este campo es obligatorio")
 	private Calificacion calificacion;
 
 	@OneToOne
 	@JoinColumn(name = "idPopularidad", nullable = false)
+	@NotNull(message="Este campo es obligatorio")
 	private Popularidad popularidad;
 
 	@Column(name = "nombreJuego", length = 30, nullable = false)
+	@NotNull(message="Debe espcificar el nombre del juego")
+	@Size(min=5,max=30, message="El nombre tiene como mínimo 5 letras y máximo 30")
 	private String nombreJuego;
 
 	@Column(name = "descripcion", length = 200, nullable = false)
+	@NotNull(message="La descripcion no puede ser nula")
+	@Size(min=10,max=200,message="La descripcion tiene como mínimo 10 letras y máximo 200")
 	private String descripcion;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -49,12 +60,16 @@ public class Juego {
 
 
 	@Column(name = "tamanoJuego", nullable = false)
+	@NotNull(message="Este campo es requerido")
+	@DecimalMin(value="2.00", message="El tamaño mínimo es de 2GB")
+	@DecimalMax(value="30.00", message="El tamaño máximo es de 30GB")
 	private int tamanoJuego;
 
 	@Column(name = "precioJuego", nullable = false)
+	@NotNull(message="Este campo es requerido")
+	@DecimalMin(value="2.00", message="El precio mínimo es de 2 dólares")
+	@DecimalMax(value="300.00", message="El precio máximo es de 300 dólares")
 	private float precioJuego;
-	
-	private String Foto;
 
 	public Juego() {
 		super();
@@ -63,7 +78,7 @@ public class Juego {
 
 	public Juego(int idJuego, Categoria categoria, Clasificacion clasificacion, Calificacion calificacion,
 			Popularidad popularidad, String nombreJuego, String descripcion, Date fechaLanzamiento, int tamanoJuego,
-			float precioJuego, String foto) {
+			float precioJuego) {
 		super();
 		this.idJuego = idJuego;
 		this.categoria = categoria;
@@ -75,7 +90,6 @@ public class Juego {
 		this.fechaLanzamiento = fechaLanzamiento;
 		this.tamanoJuego = tamanoJuego;
 		this.precioJuego = precioJuego;
-		this.Foto = foto;
 	}
 
 	public int getIdJuego() {
@@ -157,22 +171,12 @@ public class Juego {
 	public void setPrecioJuego(float precioJuego) {
 		this.precioJuego = precioJuego;
 	}
-	
-	
-	
-	public String getFoto() {
-		return Foto;
-	}
-
-	public void setFoto(String foto) {
-		this.Foto = foto;
-	}
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(idJuego);
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

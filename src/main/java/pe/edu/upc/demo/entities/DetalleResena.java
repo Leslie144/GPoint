@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -21,18 +22,22 @@ public class DetalleResena {
 	private int idDetalleResena;
 	
 	@ManyToOne
+	@NotNull(message="Este campo es requerido")
 	@JoinColumn(name = "idResena", nullable = false)
 	private Resena resena;
 
 	@ManyToOne
+	@NotNull(message="Este campo es requerido")
 	@JoinColumn(name = "id", nullable = false)
 	private Users usuario;
 
 	@ManyToOne
+	@NotNull(message="Este campo es requerido")
 	@JoinColumn(name = "idJuego", nullable = false)
 	private Juego juego;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@NotNull(message="Indique la fecha de publicación")
 	@Column(name = "fechaPublicacion", nullable = false)
 	private Date fechaPublicacion;
 

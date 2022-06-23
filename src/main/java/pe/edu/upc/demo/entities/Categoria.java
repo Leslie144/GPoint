@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * @author Leslie
@@ -22,9 +24,13 @@ public class Categoria {
 	private int idCategoria;
 
 	@Column(name = "tipoCategoria", nullable = false, length = 50)
+	@NotNull(message="Este campo es requerido")
+	@Size(min=10, max=50, message="Este campo tiene como mínimo 10 letras y máximo 50")
 	private String tipoCategoria;
 	
 	@Column(name = "descripcionCategoria", nullable = false, length = 100)
+	@NotNull(message="Este campo es requerido")
+	@Size(min=10, max=200, message="La descripción tiene como mínimo 10 letras y máximo 200")
 	private String descripcionCategoria;
 
 	public Categoria() {

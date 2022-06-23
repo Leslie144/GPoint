@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import pe.edu.upc.demo.entities.Notificacion;
+import pe.edu.upc.demo.serviceinterface.IJuegoService;
 import pe.edu.upc.demo.serviceinterface.INotificacionService;
+import pe.edu.upc.demo.serviceinterface.IUserService;
 
 @Controller
 @RequestMapping("/notificaciones")
@@ -24,11 +26,17 @@ public class NotificacionController {
 	@Autowired
 	private INotificacionService nService;
 	
+	@Autowired
+	private IJuegoService jService;
 	
+	@Autowired 
+	private IUserService uService;
 	// REGISTRA UNA NUEVA CALIFICACION Y DIRECCIONA UN FORM DE REGISTRO
 	@GetMapping("/nuevo")
 	public String newNotificacion(Model model) {
 		model.addAttribute("n", new Notificacion());
+		model.addAttribute("listaJuegos", jService.list());
+		model.addAttribute("listaUsuarios", uService.listar());
 		return "notificacion/frmNotificacion";
 	}
 	
@@ -41,7 +49,7 @@ public class NotificacionController {
 		} else {
 			nService.insert(n);
 			model.addAttribute("mensaje", "Se registró correctamente!!");
-			return "redirect:/notificaciones/nuevo";
+			return "redirect:/notificaciones/listar";
 		}
 	}
 

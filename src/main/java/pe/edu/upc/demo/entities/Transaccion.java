@@ -12,7 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 
 
 
@@ -37,10 +39,12 @@ public class Transaccion {
 	
 	@NotNull(message = "Debe indicar un monto")
 	@Min(value = 0, message  ="El precio mínimo es 0")
+	@Max(value = 300, message = "El precio máximo es 300")
 	@Column(name="precioJuego", nullable = false)
 	private int precioJuego;
 	
-	@NotNull(message = "Especifique la fecha de la transaccion")
+	@NotEmpty(message = "Especifique la fecha de la transaccion")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name="fechaTransaccion", nullable = false)
 	private Date fechaTransaccion;
 

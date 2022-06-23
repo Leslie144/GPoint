@@ -17,9 +17,8 @@
 
 		<div>
 			<div class="table-responsive">
-				<table class="table table-dark" border=1
-					style="background-color: gold">
-					<thead align="center">
+				<table class="table" border=1 style="background-color: gold">
+					<thead align="center" class="bg-warning">
 						<tr>
 							<th>Id</th>
 							<th>Tipo de Popularidad</th>
@@ -28,7 +27,7 @@
 						</tr>
 					</thead>
 
-					<tbody>
+					<tbody class="bg-dark text-white">
 						<tr th:each="p:${listaPopularidades}">
 							<td th:text="${p.idPopularidad}" align="center"></td>
 							<td th:text="${p.tipoPopularidad}" align="center"></td>
@@ -48,17 +47,17 @@
 		<hr>
 		<div class="container-fluid">
 			<h1>¿Cómo medir el éxito de un videojuego?</h1>
+			<hr>
 			<div class="row">
 				<div class="col-sm">
-					<img th:src="@{/image/mario2.png}">
+					<img th:src="@{/image/piramide.png}">
 				</div>
+				<br>
 				<div class="col-sm">
-					<p>En G-Point utilizamos un sistema de popularidad medida en
-						estrellas, mientras más estrellas tenga un videojuego más acogida
-						representará para los desarrolladores. Esto nos ayuda para que los
-						desarrolladores tengan un feedback acerca de sus proyectos y que
-						tomen decisiones a partir de ello.</p>
-					<img th:src="@{/image/star.png}">
+					<p>En G-Point utilizamos un sistema de popularidad medida en palabras clave, 
+						estas nos permiten reconocer y etiquetar que juegos son los que tienen un nivel de 
+						popularidad alto y por ende saber si es rentable para el desarrollador.</p>
+					
 				</div>
 			</div>
 		</div>

@@ -44,6 +44,10 @@ public class UserController {
 			us.setEnabled(objTel.getEnabled());
 			us.setPassword(pE);
 
+			us.setNombre(objTel.getNombre());
+			us.setApellido(objTel.getApellido());
+			us.setFechaRegistro(objTel.getFechaRegistro());
+			
 			uService.insertar(us);
 			model.addAttribute("mensaje", "Se guardó correctamente");
 			// status.setComplete();

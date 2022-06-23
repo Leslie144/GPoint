@@ -12,6 +12,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
@@ -21,9 +24,13 @@ public class Users {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@NotNull(message="El nombre de usuario es obligatorio")
+	@Pattern(regexp="[a-z0-9]")
 	@Column(length = 30, unique = true)
+	@Size(min=5, max=20, message="El username tiene como mínimo 5 letras y máximo 20")
 	private String username;
 
+	@NotNull(message="El password es obligatorio")
 	@Column(length = 200)
 	private String password;
 

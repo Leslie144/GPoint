@@ -9,20 +9,27 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "Tarjeta")
 public class Tarjeta {
+	
 	@Id
 	@Column(name = "numeroTarjeta", nullable = false)
+	@NotNull(message="Este campo no debe estar vacío")
 	private int numeroTarjeta;
 	
 	@ManyToOne
 	@JoinColumn(name = "idUsuario", nullable = false)
+	@NotNull(message="El usuario es un campo requerido")
 	private Users usuario;
 	
+	@NotNull(message="El nombre de la tarjea es obligatorio")
 	@Column(name = "nombreTarjeta", length = 30, nullable = false)
 	private String nombreTarjeta;
 
@@ -30,6 +37,9 @@ public class Tarjeta {
 	@Column(name = "fechaExpiracion", nullable = false)
 	private Date fechaExpiracion;
 	
+	@NotNull(message="El código CVV es obligatorio")
+	@Min(value= 3)
+	@Max(value = 3, message="El código CVV permite máximo 3 digitos")
 	@Column(name = "codigoCvv", nullable = false)
 	private int codigoCvv;
 

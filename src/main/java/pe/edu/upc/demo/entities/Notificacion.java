@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 
@@ -35,9 +36,11 @@ public class Notificacion {
 	
 	@NotNull(message = "Debe especificar el mensaje a mostrar")
 	@Column(name="mensaje", nullable = false, length = 44)
+	@Size(min=10,max=200, message="El mensaje contiene mínimo 10 letras y máximo 200")
 	private String mensaje;
 	
 	@NotNull(message = "Debe especificar el estado de la notificacion")
+	@Size(min=2, max=2, message="Este campo tiene como mínimo 2 letras y máximo 2")
 	@Column(name="notificacionActiva", nullable = false, length = 44)
 	private String notificacionActiva;
 
