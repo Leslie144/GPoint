@@ -77,7 +77,7 @@ public class TransaccionController {
 	public String goUpdate(@PathVariable int id, Model model) {
 
 		Optional<Transaccion> objTra = traService.listId(id); // Lista los atributos de un registro
-		model.addAttribute("ca", objTra.get());// Trae los atributos del registro
+		model.addAttribute("tra", objTra.get());// Trae los atributos del registro
 		return "transaccion/frmActualiza";
 	}
 
