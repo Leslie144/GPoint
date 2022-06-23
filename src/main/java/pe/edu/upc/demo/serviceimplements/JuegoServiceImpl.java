@@ -38,6 +38,12 @@ public class JuegoServiceImpl implements IJuegoService {
 		return jR.findById(idJuego);
 	}
 
+	@Override
+	public List<String[]> resenaJuego() {
+		
+		return jR.resenaJuego();
+	}
+
 
 	}
 
