@@ -33,7 +33,7 @@
 					<div class="col-sm-12">
 						<label for="idUsuario" class="col-sm-2 col-form-label">Usuario:
 						</label> <select class="form-control" th:field="*{usuario.id}">
-							<option th:each="u:${listaUsuarios}" th:value="${u.id}" th:text="${u.username}"
+							<option th:each="u:${listaUsuarios}" th:value="${u.id}"
 								th:selected="(${u.id} == *{usuario.id})"></option>
 						</select>
 					</div>
