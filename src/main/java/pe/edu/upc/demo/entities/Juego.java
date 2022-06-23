@@ -70,7 +70,9 @@ public class Juego {
 	@DecimalMin(value="2.00", message="El precio mínimo es de 2 dólares")
 	@DecimalMax(value="300.00", message="El precio máximo es de 300 dólares")
 	private float precioJuego;
-
+	
+	private String Foto;
+		
 	public Juego() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -78,7 +80,7 @@ public class Juego {
 
 	public Juego(int idJuego, Categoria categoria, Clasificacion clasificacion, Calificacion calificacion,
 			Popularidad popularidad, String nombreJuego, String descripcion, Date fechaLanzamiento, int tamanoJuego,
-			float precioJuego) {
+			float precioJuego, String foto) {
 		super();
 		this.idJuego = idJuego;
 		this.categoria = categoria;
@@ -90,6 +92,7 @@ public class Juego {
 		this.fechaLanzamiento = fechaLanzamiento;
 		this.tamanoJuego = tamanoJuego;
 		this.precioJuego = precioJuego;
+		this.Foto = foto;
 	}
 
 	public int getIdJuego() {
@@ -189,7 +192,13 @@ public class Juego {
 		return idJuego == other.idJuego;
 	}
 
+	public String getFoto() {
+		return Foto;
+	}
 
+	public void setFoto(String foto) {
+		Foto = foto;
+	}
 	
 
 	
