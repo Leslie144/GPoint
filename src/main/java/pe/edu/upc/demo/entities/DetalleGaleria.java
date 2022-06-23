@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "DetalleGaleria")
@@ -20,10 +21,12 @@ public class DetalleGaleria {
 	private Galeria galeria;
 
 	@ManyToOne
+	@NotNull(message="Este campo es requerido")
 	@JoinColumn(name = "idJuego", nullable = false)
 	private Juego juego;
 
 	@ManyToOne
+	@NotNull(message="Este campo es requerido")
 	@JoinColumn(name = "idUsuario", nullable = false)
 	private Users usuario;
 

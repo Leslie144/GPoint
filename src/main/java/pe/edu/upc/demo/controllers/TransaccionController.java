@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import pe.edu.upc.demo.entities.Transaccion;
+import pe.edu.upc.demo.serviceinterface.IJuegoService;
 import pe.edu.upc.demo.serviceinterface.ITransaccionService;
+import pe.edu.upc.demo.serviceinterface.IUserService;
 
 @Controller
 @RequestMapping("/transacciones")
@@ -24,11 +26,19 @@ public class TransaccionController {
 	@Autowired
 	private ITransaccionService traService;
 	
+	@Autowired
+	private IUserService uService;
+	
+	@Autowired
+	private IJuegoService jService;
+	
 	
 	// REGISTRA UNA NUEVA CALIFICACION Y DIRECCIONA UN FORM DE REGISTRO
 	@GetMapping("/nuevo")
 	public String newTransaccion(Model model) {
 		model.addAttribute("tra", new Transaccion());
+		model.addAttribute("listaUsuarios", uService.listar());
+		model.addAttribute("listaJuegos", jService.list());
 		return "transaccion/frmTransaccion";
 	}
 	
@@ -41,7 +51,7 @@ public class TransaccionController {
 		} else {
 			traService.insert(tra);
 			model.addAttribute("mensaje", "Se registró correctamente!!");
-			return "redirect:/transacciones/nuevo";
+			return "redirect:/transacciones/listar";
 		}
 	}
 
@@ -68,7 +78,7 @@ public class TransaccionController {
 		} catch (Exception e) {
 			model.put("error", e.getMessage());
 		}
-		return "transaccion/frmLista";
+		return "redirect:/transaccion/frmLista";
 	}
 
 	
@@ -77,7 +87,7 @@ public class TransaccionController {
 	public String goUpdate(@PathVariable int id, Model model) {
 
 		Optional<Transaccion> objTra = traService.listId(id); // Lista los atributos de un registro
-		model.addAttribute("ca", objTra.get());// Trae los atributos del registro
+		model.addAttribute("tra", objTra.get());// Trae los atributos del registro
 		return "transaccion/frmActualiza";
 	}
 
@@ -85,6 +95,6 @@ public class TransaccionController {
 	@PostMapping ("/modificar")
 	public String updateTransaccion(Transaccion tr) {
 		traService.update(tr);
-		return "redirect:/transacciones/listar";
+		return "redirect:/transaccion/listar";
 	}
 }

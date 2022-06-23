@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 
 
 @Entity
@@ -17,9 +20,12 @@ public class Galeria {
 	private int idGaleria;
 	
 	@Column(name = "nombreGaleria", nullable = false, length = 44 )
+	@NotNull(message="Especifique el nombre de la galería")
+	@Size(min=10, max=30, message="El nombre tiene mínimo 10 letras y máximo 30")
 	private String nombreGaleria;
 	
 	@Column(name = "cantidadJuegos", nullable = false, length = 20 )
+	@NotNull(message="Este campo es requerido")
 	private String cantidadJuegos;
 
 	

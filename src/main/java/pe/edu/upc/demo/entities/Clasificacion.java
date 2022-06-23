@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "Clasificacion")
@@ -16,9 +18,13 @@ public class Clasificacion {
 	private int idClasificacion;
 	
 	@Column(name = "tipoClasificacion", nullable = false, length = 10)
+	@NotNull(message="Este campo es requerido")
+	@Size(min=2, max=3, message="Este campo tiene como mínimo 2 letras y máximo 3")
 	private String tipoClasificacion;
 	
 	@Column(name = "aptoPara", nullable = false, length = 20)
+	@NotNull(message="Este campo es requerido")
+	@Size(min=10, max=20, message="Este campo tiene como mínimo 10 letras y máximo 20")
 	private String aptoPara;
 
 	public Clasificacion() {
