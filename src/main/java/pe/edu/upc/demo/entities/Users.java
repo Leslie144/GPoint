@@ -1,5 +1,6 @@
 package pe.edu.upc.demo.entities;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -35,7 +36,20 @@ public class Users {
 	private String password;
 
 	private Boolean enabled;
+	
+	@Column(name="nombre", nullable=false, length=44)
+	@NotNull(message="El campo es requerido")
+	private String nombre;
+	
+	@Column(name="apellido", nullable=false, length=44)
+	@NotNull(message="El campo es requerido")
+	private String apellidonombre;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Column(name = "fechaRegistro", nullable = false)
+	private Date fechaRegistro;
 
+	
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_id")
 	private List<Role> roles;
