@@ -44,6 +44,7 @@ public class Transaccion {
 	private int precioJuego;
 	
 	@NotEmpty(message = "Especifique la fecha de la transaccion")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name="fechaTransaccion", nullable = false)
 	private Date fechaTransaccion;
 
