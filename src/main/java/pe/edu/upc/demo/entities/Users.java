@@ -1,5 +1,6 @@
 package pe.edu.upc.demo.entities;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -13,6 +14,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "users")
 public class Users {
@@ -21,6 +24,12 @@ public class Users {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@Column(length = 30)
+	private String nombre;
+	
+	@Column(length = 30)
+	private String apellido;
+	
 	@Column(length = 30, unique = true)
 	private String username;
 
@@ -29,6 +38,11 @@ public class Users {
 
 	private Boolean enabled;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Column(nullable = false)
+	private Date fechaRegistro;
+	
+	
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "user_id")
 	private List<Role> roles;
@@ -71,6 +85,30 @@ public class Users {
 
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Date getFechaRegistro() {
+		return fechaRegistro;
+	}
+
+	public void setFechaRegistro(Date fechaRegistro) {
+		this.fechaRegistro = fechaRegistro;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
 	}
 
 }
