@@ -1,12 +1,11 @@
 package pe.edu.upc.demo.serviceimplements;
 
 import java.util.List;
-
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 
 import pe.edu.upc.demo.entities.DetalleResena;
 import pe.edu.upc.demo.repositories.IDetalleResenaRepository;
@@ -36,6 +35,20 @@ public class DetalleResenaServiceImpl implements IDetalleResenaService{
 	public void delete(int idDR) {
 		drR.deleteById(idDR);
 		
+	}
+
+	@Override
+	@Transactional
+	public void modificar(DetalleResena dr) {
+		drR.save(dr);
+		
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Optional<DetalleResena> listarId(int idDr) {
+		// TODO Auto-generated method stub
+		return drR.findById(idDr);
 	}
 
 	

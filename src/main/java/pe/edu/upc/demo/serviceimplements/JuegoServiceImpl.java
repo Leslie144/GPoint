@@ -51,6 +51,13 @@ public class JuegoServiceImpl implements IJuegoService {
 		
 	}
 
+	@Override
+	@Transactional
+	public void modificar(Juego juego) {
+		// TODO Auto-generated method stub
+		jR.save(juego);
+	}
+
 
 	}
 
