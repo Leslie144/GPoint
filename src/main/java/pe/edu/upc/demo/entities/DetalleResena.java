@@ -1,6 +1,7 @@
 package pe.edu.upc.demo.entities;
 
 import java.util.Date;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -50,6 +51,18 @@ public class DetalleResena {
 		this.usuario = usuario;
 		this.juego = juego;
 		this.fechaPublicacion = fechaPublicacion;
+	}
+
+
+
+	public int getIdDetalleResena() {
+		return idDetalleResena;
+	}
+
+
+
+	public void setIdDetalleResena(int idDetalleResena) {
+		this.idDetalleResena = idDetalleResena;
 	}
 
 
@@ -104,6 +117,27 @@ public class DetalleResena {
 
 	public void setFechaPublicacion(Date fechaPublicacion) {
 		this.fechaPublicacion = fechaPublicacion;
+	}
+
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(idDetalleResena);
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DetalleResena other = (DetalleResena) obj;
+		return idDetalleResena == other.idDetalleResena;
 	}
 
 	

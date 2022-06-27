@@ -25,6 +25,8 @@
 							<th>Usuario</th>
 							<th>Juego</th>
 							<th>Fecha de Publicación</th>
+							<th align="center">Eliminar</th>
+							<th align="center">Modificar</th>
 						</tr>
 					</thead>
 					<tbody id="dr-list">
@@ -33,7 +35,12 @@
 							<td th:text="${dr.usuario.username}"></td>
 							<td th:text="${dr.juego.nombreJuego}"></td>
 							<td th:text="${#dates.format(dr.fechaPublicacion,'dd/MM/yyyy')}"></td>
-						
+							<td align="center"><a
+								th:href="@{/detalleresenas/eliminar?id=}+${dr.idDetalleResena}"><img
+									th:src="@{/image/delete.png}" width="30" height="30"></a></td>
+							<td align="center"><a
+								th:href="@{'/detalleresenas/irmodificar/' + ${dr.idDetalleResena}}"><img
+									th:src="@{/image/update.png}" width="30" height="30"></a></td>
 						</tr>
 					</tbody>
 				</table>

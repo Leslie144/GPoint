@@ -44,6 +44,20 @@ public class JuegoServiceImpl implements IJuegoService {
 		return jR.resenaJuego();
 	}
 
+	@Override
+	@Transactional
+	public void delete(int idJuego) {
+		jR.deleteById(idJuego);
+		
+	}
+
+	@Override
+	@Transactional
+	public void modificar(Juego juego) {
+		// TODO Auto-generated method stub
+		jR.save(juego);
+	}
+
 
 	}
 

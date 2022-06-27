@@ -2,7 +2,6 @@ package pe.edu.upc.demo.controllers;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.text.ParseException;
 import java.util.Map;
 import java.util.Optional;
 
@@ -33,6 +32,7 @@ import pe.edu.upc.demo.serviceinterface.IClasificacionService;
 import pe.edu.upc.demo.serviceinterface.IJuegoService;
 import pe.edu.upc.demo.serviceinterface.IPopularidadService;
 import pe.edu.upc.demo.serviceinterface.IUploadFileService;
+
 
 
 
@@ -149,6 +149,41 @@ public class JuegoController {
 	public String resenaJuego(Map <String, Object> model) {
 		model.put("reporteLista", jService.resenaJuego());
 		return "juego/vista";
+	}
+	
+	@RequestMapping("/eliminar")
+	public String deleteJuego(Map<String, Object> model, @RequestParam(value = "id") Integer id) {
+		try {
+			if (id != null && id > 0) {
+				jService.delete(id);
+				model.put("mensaje", "Se eliminó correctamente");
+
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			model.put("mensaje", "No se puede eliminar un juego");
+		}
+		model.put("listaJuegos", jService.list());
+
+
+		return "/juego/listaJuego";
+	}
+	
+	@RequestMapping("/modificar/{id}")
+	public String modificar(@PathVariable int id, Model model, RedirectAttributes objRedir) {
+		Optional<Juego> objJue = jService.listarId(id);
+
+		if (objJue == null) {
+			objRedir.addFlashAttribute("mensaje", "Ocurrió un error");
+			return "redirect:/juegos/listar";
+		} else {
+			model.addAttribute("listaCategorias", cService.list());			
+			model.addAttribute("listaClasificaciones", claService.list());
+			model.addAttribute("listaCalificaciones", caService.list());
+			model.addAttribute("listaPopularidades", poService.list());
+			model.addAttribute("j", objJue.get());
+			return "juego/juego";
+		}
 	}
 
 }
