@@ -1,6 +1,7 @@
 package pe.edu.upc.demo.controllers;
 
 import java.text.ParseException;
+import java.util.Map;
 
 import javax.validation.Valid;
 
@@ -65,4 +66,12 @@ public class UserController {
 		return "/user/listaUsuario";
 	}
 
+	@RequestMapping("/reporte2")
+	public String listReports(Map <String, Object> model) {
+		model.put("listaUsuarios", uService.quantityUsers());
+		System.out.println("cant usu: " + uService.quantityUsers().size());
+		model.put("cantidad", uService.quantityUsers().size());
+		return "user/vista";
+	}
+	
 }

@@ -9,4 +9,6 @@ public interface IUserService {
 
 	List<Users> listar();
 
+	public List<String[]> quantityUsers();
+
 }

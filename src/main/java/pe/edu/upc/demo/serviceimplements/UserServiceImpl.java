@@ -28,4 +28,10 @@ public class UserServiceImpl implements IUserService {
 		return tR.findAll();
 	}
 
+	@Override
+	public List<String[]> quantityUsers() {
+		// TODO Auto-generated method stub
+		return tR.quantityUsers();
+	}
+
 }

@@ -14,17 +14,16 @@
 			de Juegos</div>
 		<hr style="background-color: black; font-weight: 20" />
 		<hr style="background-color: gold" />
-		
+
 		<a th:href="@{/juegos/reporte1}" type="button"
-						class="btn btn-primary k"> <span
-						class="glyphicon glyphicon-circle-arrow-left"></span> Numero de Reseñas por Juego
-					</a>
-					
-			<br/>
-		
-		
+			class="btn btn-primary k"> <span
+			class="glyphicon glyphicon-circle-arrow-left"></span> Numero de
+			Reseñas por Juego
+		</a> <br />
+
+
 		<div>
-			
+
 			<div class="table-responsive">
 				<table class="table table-dark">
 					<thead>
@@ -47,8 +46,7 @@
 					<tbody id="juego-list">
 						<tr th:each="j:${listaJuegos}">
 							<td><a class="btn btn-primary btn-xs"
-								th:href="@{/juegos/ver/} + ${j.idJuego}"
-								th:text="${j.idJuego}"></a></td>
+								th:href="@{/juegos/ver/} + ${j.idJuego}" th:text="${j.idJuego}"></a></td>
 							<td th:text="${j.categoria.tipoCategoria}"></td>
 							<td th:text="${j.clasificacion.tipoClasificacion}"></td>
 							<td th:text="${j.calificacion.numEstrellas}"></td>
