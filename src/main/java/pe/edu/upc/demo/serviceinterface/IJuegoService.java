@@ -16,6 +16,7 @@ public interface IJuegoService {
 	Optional<Juego> listarId(int idJuego);
 	
 	public List<String[]> resenaJuego();
-		
+	
+	public void delete(int idJuego);
 
 }

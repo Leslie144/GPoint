@@ -32,6 +32,12 @@ public class DetalleResenaServiceImpl implements IDetalleResenaService{
 		return drR.findAll();
 	}
 
+	@Override
+	public void delete(int idDR) {
+		drR.deleteById(idDR);
+		
+	}
+
 	
 	
 }

@@ -150,5 +150,23 @@ public class JuegoController {
 		model.put("reporteLista", jService.resenaJuego());
 		return "juego/vista";
 	}
+	
+	@RequestMapping("/eliminar")
+	public String deleteJuego(Map<String, Object> model, @RequestParam(value = "id") Integer id) {
+		try {
+			if (id != null && id > 0) {
+				jService.delete(id);
+				model.put("mensaje", "Se eliminó correctamente");
+
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			model.put("mensaje", "No se puede eliminar un juego");
+		}
+		model.put("listaJuegos", jService.list());
+
+
+		return "/juego/listaJuego";
+	}
 
 }
