@@ -86,6 +86,10 @@ public class JuegoController {
 			@RequestParam("file") MultipartFile foto, RedirectAttributes flash, SessionStatus status) throws Exception {
 		if (result.hasErrors()) {
 			System.out.println(result.getFieldError(null));
+			model.addAttribute("listaCategorias", cService.list());
+			model.addAttribute("listaClasificaciones", claService.list());
+			model.addAttribute("listaCalificaciones", caService.list());
+			model.addAttribute("listaPopularidades", poService.list());
 			return "juego/juego";
 		} else {
 			if (!foto.isEmpty()) {
