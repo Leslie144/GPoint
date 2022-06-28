@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 
 @Entity
@@ -16,9 +17,12 @@ public class Galeria {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idGaleria;
 	
+	@NotNull(message = "Debe especificar el nombre de galeria")
 	@Column(name = "nombreGaleria", nullable = false, length = 44 )
 	private String nombreGaleria;
 	
+	
+	@NotNull(message = "Debe especificar la cantidad de juegos")
 	@Column(name = "cantidadJuegos", nullable = false, length = 20 )
 	private String cantidadJuegos;
 

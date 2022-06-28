@@ -96,7 +96,13 @@ public class GaleriaController {
 		return "redirect:/galerias/listar";
 	}
 	
-	
+	@RequestMapping("/reportegaleria") 
+	public String CantidadJuegosPorGaleria(Map<String,Object> model)
+	{
+		model.put("reporteGaleria",galService.CantidadJuegosPorGaleria());
+		
+		return "galeria/reporte";
+	}
 	
 	
 	

@@ -17,5 +17,5 @@ public interface IGaleriaService {
 	
 	public void update (Galeria galeria);
 
-	
+	public List<String[]>CantidadJuegosPorGaleria();
 }

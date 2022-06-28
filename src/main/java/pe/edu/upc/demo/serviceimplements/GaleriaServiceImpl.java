@@ -51,6 +51,13 @@ public class GaleriaServiceImpl implements IGaleriaService{
 		galeriaRepository.save(galeria);
 		
 	}
+
+	
+	public List<String[]> CantidadJuegosPorGaleria() {
+		// TODO Auto-generated method stub
+		return galeriaRepository.CantidadJuegosPorGaleria();
+	}
 	 
 
+	
 }
