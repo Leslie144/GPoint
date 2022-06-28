@@ -12,7 +12,7 @@
 		<div
 			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Lista
 			de Juegos</div>
-		<span class="title-content">Cantidad de usuarios registrados en
+		<span class="title-content">Cantidad de usuarios con transacciones registrados en
 			el último mes: <span th:text="${cantidad}"></span> usuarios
 		</span>
 		<hr style="background-color: black; font-weight: 20" />
@@ -26,6 +26,7 @@
 						<tr>
 							<th>Id</th>
 							<th>Usuarios</th>
+							<th>Monto Transacción</th>
 
 						</tr>
 					</thead>
@@ -36,6 +37,7 @@
 						<tr th:each="z:${listaUsuarios}">
 							<td th:text="${z[0]}"></td>
 							<td th:text="${z[1]}"></td>
+							<td th:text="${z[2]}"></td>
 
 						</tr>
 					</tbody>
