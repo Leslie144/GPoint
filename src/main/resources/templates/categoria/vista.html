@@ -10,17 +10,9 @@
 	<div class="container">
 		<hr style="background-color: gold" />
 		<div
-			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Reporte</div>
-
+			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Estimacion de ganancia por categoria</div>
 		<hr style="background-color: black; font-weight: 20" />
 		<hr style="background-color: gold" />
-		
-		
-		<span class="title-content">Cantidad de usuarios con transacciones registrados en
-			el último mes: <span th:text="${cantidad}"></span> usuarios
-		</span>
-		
-		
 
 		<div>
 
@@ -28,28 +20,29 @@
 				<table class="table table-dark">
 					<thead>
 						<tr>
-							<th>Id</th>
-							<th>Usuarios</th>
-							<th>Monto Transacción</th>
-
+							<th>ID Categoria</th>
+							<th>Tipo Categoria</th>
+							<th>Descripcion Categoria</th>
+							<th>Ganancia Total</th>
 						</tr>
 					</thead>
 
 
 
 					<tbody id="reprorte-list">
-						<tr th:each="z:${listaUsuarios}">
+						<tr th:each="z:${reporteLista4}">							
 							<td th:text="${z[0]}"></td>
 							<td th:text="${z[1]}"></td>
 							<td th:text="${z[2]}"></td>
-
+							<td th:text="${z[3]}"></td>
+							
 						</tr>
 					</tbody>
 				</table>
-				<a th:href="@{/usuarios/listar}" type="button"
-					class="btn btn-primary k"> <span
-					class="glyphicon glyphicon-circle-arrow-left"></span> Volver
-				</a>
+					<a th:href="@{/categorias/listar}" type="button"
+						class="btn btn-primary k"> <span
+						class="glyphicon glyphicon-circle-arrow-left"></span> Volver
+					</a>
 				<div th:if="${mensaje}" class="alert alert-info">
 					<p th:text="${mensaje}"></p>
 				</div>

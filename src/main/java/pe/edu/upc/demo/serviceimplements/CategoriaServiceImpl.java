@@ -45,4 +45,10 @@ public class CategoriaServiceImpl implements ICategoriaService {
 		categoriaRepository.save(categoria);
 	}
 
+	@Override
+	public List<String[]> GananciaTotalporCategoria() {
+		// TODO Auto-generated method stub
+		return categoriaRepository.GananciaTotalporCategoria();
+	}
+
 }
