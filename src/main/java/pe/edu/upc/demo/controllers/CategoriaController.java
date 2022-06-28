@@ -76,4 +76,15 @@ public class CategoriaController {
 		//model.addAttribute("mensaje", "Se modificó correctamente!!");
 		return "redirect:/categorias/listar";// @RequestMapping
 	}
+	
+	
+	
+	@RequestMapping("/reporte4")
+    public String GananciaTotalporCategoria(Map <String, Object> model) {
+        model.put("reporteLista4", catService.GananciaTotalporCategoria());
+        return "categoria/vista";
+    }
+	
+	
+	
 }

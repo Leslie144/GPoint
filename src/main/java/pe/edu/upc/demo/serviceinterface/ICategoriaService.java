@@ -15,4 +15,8 @@ public interface ICategoriaService {
 	Optional<Categoria> listId(int idCategoria);
 	
 	public void update(Categoria categoria);
+		
+	
+	public List<String[]> GananciaTotalporCategoria();
+	
 }
