@@ -1,6 +1,8 @@
 package pe.edu.upc.demo.controllers;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -27,9 +29,17 @@ public class UserController {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
+	Date date = new Date();
+	java.sql.Date date2;
+	
 	@GetMapping("/nuevo")
 	public String newUser(Model model) {
-		model.addAttribute("u", new Users());
+		Users newuser = new Users();
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		String formatdate = formatter.format(date);
+		date2 =  java.sql.Date.valueOf(formatdate);
+		newuser.setFechaRegistro(date2);
+		model.addAttribute("u", newuser);
 		return "user/usuario";
 	}
 
@@ -47,7 +57,7 @@ public class UserController {
 
 			us.setNombre(objTel.getNombre());
 			us.setApellido(objTel.getApellido());
-			us.setFechaRegistro(objTel.getFechaRegistro());
+			us.setFechaRegistro(date2);
 			
 			uService.insertar(us);
 			model.addAttribute("mensaje", "Se guardó correctamente");
