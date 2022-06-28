@@ -30,8 +30,9 @@
 					</thead>
 					<tbody id="juego-list">
 						<tr th:each="tra:${listaTransacciones}">
-							<td th:text="${tra.juego.idJuego}"></td>
-							<td th:text="${tra.usuario.idUsuario}"></td>
+							<td th:text="${tra.idTransaccion}"></td>
+							<td th:text="${tra.juego.nombreJuego}"></td>
+							<td th:text="${tra.usuario.username}"></td>
 							<td th:text="${tra.precioJuego}"></td>
 							<td th:text="${#dates.format(tra.fechaTransaccion,'dd/MM/yyyy')}"></td>
 						</tr>

@@ -155,6 +155,15 @@ public class JuegoController {
 		return "juego/vista";
 	}
 	
+	@RequestMapping("/reporte3")
+    public String maspopularJuego(Map <String, Object> model) {
+        model.put("reporteLista2", jService.maspopularJuego());
+        return "juego/vista2";
+    }
+	
+	
+	
+	
 	@RequestMapping("/eliminar")
 	public String deleteJuego(Map<String, Object> model, @RequestParam(value = "id") Integer id) {
 		try {

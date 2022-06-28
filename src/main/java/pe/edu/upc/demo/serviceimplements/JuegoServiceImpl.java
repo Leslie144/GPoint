@@ -58,6 +58,12 @@ public class JuegoServiceImpl implements IJuegoService {
 		jR.save(juego);
 	}
 
+	@Override
+	public List<String[]> maspopularJuego() {
+		// TODO Auto-generated method stub
+		return jR.maspopularJuego();
+	}
+	
 
 	}
 
