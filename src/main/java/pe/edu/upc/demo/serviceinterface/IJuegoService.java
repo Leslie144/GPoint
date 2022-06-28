@@ -18,5 +18,7 @@ public interface IJuegoService {
 	public List<String[]> resenaJuego();
 	
 	public void delete(int idJuego);
+	
+	public void modificar(Juego juego);
 
 }
