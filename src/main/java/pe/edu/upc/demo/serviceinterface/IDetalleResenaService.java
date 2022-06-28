@@ -11,5 +11,5 @@ public interface IDetalleResenaService {
 
 	public List<DetalleResena> list();
 
-	
+	public void delete(int idDR);
 }
