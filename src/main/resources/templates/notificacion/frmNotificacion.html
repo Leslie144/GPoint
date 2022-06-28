@@ -47,12 +47,17 @@
 							 required></input>
 					</div>
 
+					
 					<div class="col-sm-12">
-						<label class="form-label" style="font-weight: 600">Notificacion
-							Activa: </label><input type="text" th:field="*{notificacionActiva}"
-							class="form-control" pattern="[A-Z2]"
-							title="Debe indicar el estado de la notificacion (SI/NO)" required></input>
-					</div>
+					<label class="form-label" style="font-weight: 600">Notificacion
+							Activa: </label>
+					<select name="select" th:field="*{notificacionActiva}" class="form-control">
+						<option value="SI" selected>SI</option>
+						<option value="NO">NO</option>
+					</select>
+				</div>
+					
+					
 					<div class="col-sm-12">
 
 						<input type="submit" value="Registrar" class="btn btn-dark"></input>
