@@ -12,6 +12,9 @@ import pe.edu.upc.demo.entities.Users;
 public interface UserRepository extends JpaRepository<Users, Long> {
 	public Users findByUsername(String username);
 	
-	@Query(value = "SELECT * from users us where us.fecha_registro >= (CURRENT_DATE - 30)", nativeQuery = true)
+	@Query(value = "SELECT us.id, us.username,  sum(t.precio_juego) from users us \r\n"
+			+ "inner join transaccion t on t.id_usuario = us.id\r\n"
+			+ "where us.fecha_registro >= (CURRENT_DATE - 30)\r\n"
+			+ "group by us.id", nativeQuery = true)
 	public List<String[]> quantityUsers();
 }
