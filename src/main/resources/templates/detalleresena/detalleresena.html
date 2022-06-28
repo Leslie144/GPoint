@@ -25,7 +25,7 @@
 						<input type="text" th:field="*{idDetalleResena}" class="form-control"
 							th:errorclass="'form-control alert-danger'" /> <small
 							class="form-text text-danger"
-							th:if="${#fields.hasErrors('idDetalleResena')}" th:errors="*{idJuego}"></small>
+							th:if="${#fields.hasErrors('idDetalleResena')}" th:errors="*{idDetalleResena}"></small>
 					</div>
 				</div>
 				
@@ -56,8 +56,12 @@
 				
 				<div class="col-sm-12">
 					<label class="form-label">Fecha de Publicación:</label> <input
-						type="date" th:field="*{fechaPublicacion}"  class="form-control" required="required"></input>
+						type="date" th:field="*{fechaPublicacion}"  class="form-control" required="required"></input> <small
+							class="form-text text-danger"
+							th:if="${#fields.hasErrors('fechaPublicacion')}" th:errors="*{fechaPublicacion}"></small>
 				</div>
+				
+			
 				
 				
 				
