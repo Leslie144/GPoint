@@ -92,7 +92,9 @@ public class DetalleGaleriaController {
 		
 		Optional<DetalleGaleria>objDg= dgService.listId(id);
 		model.addAttribute("dga", objDg.get());
-		
+		model.addAttribute("listaGalerias", gService.list());
+		model.addAttribute("listaUsuarios", uService.listar());
+		model.addAttribute("listaJuegos", jService.list());
 		
 		return "detallegaleria/ActualizarDetalleGaleria";
 	}
