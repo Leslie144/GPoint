@@ -51,6 +51,9 @@ public class DetalleResenaController {
 	@PostMapping("/guardar")
 	public String registrarDetalleResena(@Valid @ModelAttribute("dr") DetalleResena objDr, BindingResult binRes, Model model) throws ParseException {
 		if (binRes.hasErrors()) {
+			model.addAttribute("listaResenas", rService.list());
+			model.addAttribute("listaUsuarios", uService.listar());
+			model.addAttribute("listaJuegos", jService.list());
 			return "detalleresena/detalleresena";
 		} else {
 			drService.insert(objDr);
