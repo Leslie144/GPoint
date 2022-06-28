@@ -11,6 +11,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -33,6 +38,9 @@ public class DetalleResena {
 	@JoinColumn(name = "idJuego", nullable = false)
 	private Juego juego;
 	
+	@NotNull(message = "La fecha es obligatoria")
+	@Past(message = "La fecha no debe estar en el futuro")
+	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "fechaPublicacion", nullable = false)
 	private Date fechaPublicacion;
@@ -101,9 +109,7 @@ public class DetalleResena {
 		return juego;
 	}
 
-	public Date getFechaPublicacion() {
-		return fechaPublicacion;
-	}
+
 
 	public void setId(int id) {
 		this.idDetalleResena = id;
@@ -114,6 +120,16 @@ public class DetalleResena {
 	public void setJuego(Juego juego) {
 		this.juego = juego;
 	}
+
+
+
+
+
+	public Date getFechaPublicacion() {
+		return fechaPublicacion;
+	}
+
+
 
 	public void setFechaPublicacion(Date fechaPublicacion) {
 		this.fechaPublicacion = fechaPublicacion;
