@@ -11,7 +11,8 @@
 	<div class="container">
 		<hr style="background-color: gold" />
 		<div
-			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Registrar Galeria</div>
+			style="font-size: 28px; color: black; font-weight: 60; font-family: fantasy;">Registrar
+			Galeria</div>
 		<hr style="background-color: black; font-weight: 20" />
 		<hr style="background-color: gold" />
 
@@ -24,37 +25,40 @@
 					<div class="col-sm-20">
 						<label class="form-label" style="font-weight: 600">Nombre
 							de Galeria: </label><input type="text" th:field="*{nombreGaleria}"
-							class="form-control"></input>
+							class="form-control" th:errorclass="'form-control alert-danger'"><small
+							class="form-text text-danger"
+							th:if="${#fields.hasErrors('nombreGaleria')}"
+							th:errors="*{nombreGaleria}"></small>
 					</div>
 
 					<ul></ul>
 
 
 					<div class="col-sm-20">
-						<label class="form-label" style="font-weight: 600">Cantidad
+						<label class="form-label" style="font-weight: 600">Capacidad
 							de Juegos: </label><input type="text" th:field="*{cantidadJuegos}"
-							class="form-control"></input>
+							class="form-control" th:errorclass="'form-control alert-danger'"><small
+							class="form-text text-danger"
+							th:if="${#fields.hasErrors('cantidadJuegos')}"
+							th:errors="*{cantidadJuegos}"></small>
 					</div>
 
 					<ul></ul>
 					<hr />
 
-
-
-
 					<div class="col-sm-20">
 						<input type="submit" value="Registrar" class="btn btn-dark"></input>
 					</div>
+					<p th:text="${mensaje}" class="form-text text-danger"></p>
 				</form>
 			</div>
-
 
 			<div class="col" align="center">
 
 				<img th:src="@{/image/registro.png}" width="300" height="320"
 					align="middle">
 			</div>
-
+		
 		</div>
 	</div>
 
