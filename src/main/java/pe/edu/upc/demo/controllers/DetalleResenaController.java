@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -48,8 +49,11 @@ public class DetalleResenaController {
 	}
 	
 	@PostMapping("/guardar")
-	public String registrarDetalleResena(@Valid DetalleResena objDr, BindingResult binRes, Model model) throws ParseException {
+	public String registrarDetalleResena(@Valid @ModelAttribute("dr") DetalleResena objDr, BindingResult binRes, Model model) throws ParseException {
 		if (binRes.hasErrors()) {
+			model.addAttribute("listaResenas", rService.list());
+			model.addAttribute("listaUsuarios", uService.listar());
+			model.addAttribute("listaJuegos", jService.list());
 			return "detalleresena/detalleresena";
 		} else {
 			drService.insert(objDr);

@@ -20,5 +20,7 @@ public interface IJuegoService {
 	public void delete(int idJuego);
 	
 	public void modificar(Juego juego);
+	
+	public List<String[]> maspopularJuego();
 
 }

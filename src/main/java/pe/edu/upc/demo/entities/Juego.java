@@ -11,6 +11,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -36,21 +44,31 @@ public class Juego {
 	@OneToOne
 	@JoinColumn(name = "idPopularidad", nullable = false)
 	private Popularidad popularidad;
-
+	
+	@NotEmpty(message = "Ingresa el nombre del juego")
 	@Column(name = "nombreJuego", length = 30, nullable = false)
 	private String nombreJuego;
-
+	
+	@NotEmpty(message = "Ingresa la descripción del juego")
 	@Column(name = "descripcion", length = 200, nullable = false)
 	private String descripcion;
-
+	
+	@NotNull(message = "La fecha es obligatoria")
+	@Past(message = "La fecha debe estar en el pasado")
+	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "fechaLanzamiento", nullable = false)
 	private Date fechaLanzamiento;
 
-
+	@Min(1)
+	@Max(1500)
+	@NotNull(message = "El tamaño es obligatorio")
 	@Column(name = "tamanoJuego", nullable = false)
 	private int tamanoJuego;
-
+	
+	@Min(1)
+	@Max(1500)
+	@NotNull(message = "El precio es obligatorio")
 	@Column(name = "precioJuego", nullable = false)
 	private float precioJuego;
 	

@@ -86,6 +86,10 @@ public class JuegoController {
 			@RequestParam("file") MultipartFile foto, RedirectAttributes flash, SessionStatus status) throws Exception {
 		if (result.hasErrors()) {
 			System.out.println(result.getFieldError(null));
+			model.addAttribute("listaCategorias", cService.list());
+			model.addAttribute("listaClasificaciones", claService.list());
+			model.addAttribute("listaCalificaciones", caService.list());
+			model.addAttribute("listaPopularidades", poService.list());
 			return "juego/juego";
 		} else {
 			if (!foto.isEmpty()) {
@@ -150,6 +154,15 @@ public class JuegoController {
 		model.put("reporteLista", jService.resenaJuego());
 		return "juego/vista";
 	}
+	
+	@RequestMapping("/reporte3")
+    public String maspopularJuego(Map <String, Object> model) {
+        model.put("reporteLista2", jService.maspopularJuego());
+        return "juego/vista2";
+    }
+	
+	
+	
 	
 	@RequestMapping("/eliminar")
 	public String deleteJuego(Map<String, Object> model, @RequestParam(value = "id") Integer id) {

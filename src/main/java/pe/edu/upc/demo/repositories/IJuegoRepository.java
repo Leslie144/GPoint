@@ -16,5 +16,10 @@ public interface IJuegoRepository extends JpaRepository<Juego, Integer> {
 	
 	@Query(value = "Select j.nombre_juego, count(d.id_detalle_resena) from juego j join detalle_resenas d on j.id_juego = d.id_juego group by j.nombre_juego", nativeQuery = true)
 	public List<String[]> resenaJuego();
+	
+
+	@Query(value = "select j.id_juego, j.nombre_juego, j.descripcion, j.precio_juego, p.tipo_popularidad from juego j join popularidad p on j.id_popularidad=p.id_popularidad", nativeQuery = true)
+	public List<String[]> maspopularJuego();
+	
 
 }
